@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#15151f"/>
+      <stop offset="100%" stop-color="#1c1c29"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="400" fill="url(#g)"/>
+  <rect x="0.5" y="0.5" width="639" height="399" fill="none" stroke="#26263a"/>
+  <text x="320" y="190" font-family="monospace" font-size="26" fill="#00d9c0" text-anchor="middle">&lt;/&gt;</text>
+  <text x="320" y="225" font-family="monospace" font-size="16" fill="#5c5c70" text-anchor="middle">Swap this image in /assets</text>
+</svg>
