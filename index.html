@@ -8,11 +8,13 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 
   <!-- Google Fonts: JetBrains Mono for headings, Inter for body text.
-       Both have solid system-font fallbacks defined in styles.css, so the
+       Tajawal covers the Arabic UI (JetBrains Mono/Inter have no Arabic
+       glyphs) — see the [dir="rtl"] font-family rules in styles.css.
+       All have solid system-font fallbacks defined in styles.css, so the
        site still looks right if this request is blocked/offline. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -28,10 +30,11 @@
       </button>
 
       <nav class="navbar__links" id="navLinks">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#contact">Contact</a>
+        <a href="#about" id="navAbout">About</a>
+        <a href="#services" id="navServices">Services</a>
+        <a href="#portfolio" id="navPortfolio">Portfolio</a>
+        <a href="#contact" id="navContact">Contact</a>
+        <button type="button" class="lang-toggle" id="langToggle" aria-label="Switch language">العربية</button>
       </nav>
     </div>
   </header>
@@ -50,7 +53,7 @@
     <!-- ======================= About ======================= -->
     <section id="about" class="section fade-in">
       <div class="container">
-        <h2 class="section__title">01. <span>About Me</span></h2>
+        <h2 class="section__title">01. <span id="secAboutTitle">About Me</span></h2>
         <div class="about__grid">
           <p class="about__bio" id="aboutBio"></p>
           <div class="about__skills" id="aboutSkills"></div>
@@ -61,7 +64,7 @@
     <!-- ======================= Services ======================= -->
     <section id="services" class="section fade-in">
       <div class="container">
-        <h2 class="section__title">02. <span>What I Do</span></h2>
+        <h2 class="section__title">02. <span id="secServicesTitle">What I Do</span></h2>
         <div class="services__grid" id="servicesGrid"></div>
       </div>
     </section>
@@ -69,7 +72,7 @@
     <!-- ======================= Portfolio ======================= -->
     <section id="portfolio" class="section fade-in">
       <div class="container">
-        <h2 class="section__title">03. <span>Portfolio</span></h2>
+        <h2 class="section__title">03. <span id="secPortfolioTitle">Portfolio</span></h2>
         <div class="portfolio__grid" id="portfolioGrid"></div>
       </div>
     </section>
@@ -77,7 +80,7 @@
     <!-- ======================= Contact ======================= -->
     <section id="contact" class="section fade-in">
       <div class="container contact__inner">
-        <h2 class="section__title">04. <span>Get In Touch</span></h2>
+        <h2 class="section__title">04. <span id="secContactTitle">Get In Touch</span></h2>
         <p id="contactIntro"></p>
         <div class="contact__methods">
           <a class="btn btn--primary" id="contactEmail" href="#"></a>
@@ -91,7 +94,7 @@
   <!-- ======================= Footer ======================= -->
   <footer class="footer">
     <div class="container footer__inner">
-      <p>&copy; <span id="year"></span> DagenWeb. All rights reserved.</p>
+      <p>&copy; <span id="year"></span> DagenWeb. <span id="footerRights">All rights reserved.</span></p>
       <!-- The only visible entry point to the admin login. Intentionally
            small/low-contrast — see styles.css .admin-access -->
       <button id="adminAccess" class="admin-access" aria-label="Admin login">&bull;</button>

@@ -2,12 +2,13 @@
    DagenWeb — script.js
    Vanilla JS, no dependencies. Organized top to bottom as:
      1. Site content data (EDIT THIS to change hero/about/services/projects)
-     2. Content load/save helpers (localStorage)
-     3. Render functions (turn content data into DOM)
-     4. Scroll fade-in animation
-     5. Mobile nav toggle
-     6. Admin: auth + login modal
-     7. Admin: dashboard panel (edit content, add/remove projects, etc.)
+     2. Arabic translation + language toggle (EN/AR, with RTL)
+     3. Content load/save helpers (localStorage)
+     4. Render functions (turn content data into DOM)
+     5. Scroll fade-in animation
+     6. Mobile nav toggle
+     7. Admin: auth + login modal
+     8. Admin: dashboard panel (edit content, add/remove projects, etc.)
    ========================================================================== */
 
 (function () {
@@ -89,7 +90,127 @@
   };
 
   /* ========================================================================
-     2. CONTENT LOAD / SAVE (localStorage)
+     2. ARABIC TRANSLATION + LANGUAGE TOGGLE
+     ------------------------------------------------------------------------
+     CONTENT_AR mirrors DEFAULT_CONTENT's shape exactly and is what renders
+     when Arabic is selected. It's a fixed translation, not admin-editable —
+     if you change DEFAULT_CONTENT (e.g. add a project), update CONTENT_AR
+     to match by hand. Emails/phone/social links/skills are left as-is
+     since those aren't translatable.
+     ======================================================================== */
+
+  var CONTENT_AR = {
+    hero: {
+      eyebrow: 'مرحبًا، اسمي',
+      name: 'م. حمزة',
+      tagline: 'أصمم وأطوّر تطبيقات ويب سريعة وسهلة الاستخدام بشيفرة نظيفة وقابلة للصيانة.',
+      ctaText: 'أعمالي'
+    },
+
+    about: {
+      bio: 'أنا مطوّر أستمتع بتحويل الأفكار إلى منتجات بسيطة ومُتقنة. أهتم بالشيفرة الواضحة، والأداء الجيد، والتفاصيل التي تجعل الواجهة مريحة للاستخدام.\n\nإلى جانب العمل مع العملاء، أحب تجربة أدوات جديدة والمساهمة في مشاريع صغيرة مفتوحة المصدر.',
+      skills: DEFAULT_CONTENT.about.skills
+    },
+
+    services: [
+      { icon: '💻', title: 'تطوير المواقع', description: 'مواقع وتطبيقات ويب مخصصة، مبنية بشيفرة نظيفة وأفضل الممارسات الحديثة.' },
+      { icon: '📱', title: 'تصميم متجاوب', description: 'واجهات تعمل وتبدو رائعة على كل حجم شاشة، من الهواتف إلى شاشات الحاسوب الكبيرة.' },
+      { icon: '⚙️', title: 'ربط واجهات برمجية', description: 'ربط تطبيقك بخدمات خارجية، وبوابات دفع، وواجهات برمجية داخلية.' },
+      { icon: '🚀', title: 'تحسين الأداء', description: 'تدقيق وتسريع المواقع البطيئة — وقت التحميل، والعرض، وتسليم الملفات.' }
+    ],
+
+    projects: [
+      {
+        title: 'GameRoll',
+        description: 'أداة اختيار عشوائي للألعاب لمن يصعب عليهم الاختيار — ارمِ نردًا، أو أدر العجلة، أو أجب عن استبيان شخصية من 20 سؤالًا لتحصل على لعبة مناسبة من مكتبة تضم 100 لعبة، مع إمكانية التصفية حسب النوع ونمط اللعب والمزاج ومستوى الصعوبة.',
+        image: DEFAULT_CONTENT.projects[0].image,
+        liveUrl: DEFAULT_CONTENT.projects[0].liveUrl,
+        codeUrl: DEFAULT_CONTENT.projects[0].codeUrl
+      },
+      {
+        title: 'Learn it twisted',
+        description: 'موقع متكامل متعدد الصفحات لمدرسة ابتدائية (من الروضة حتى الصف الخامس) — يشمل الرئيسية، ونبذة عن المدرسة، والمناهج، والقبول، والأخبار، والفعاليات، وقصص نجاح الطلاب، صُمّم ليكون دافئًا ومرحّبًا بالعائلات.',
+        image: DEFAULT_CONTENT.projects[1].image,
+        liveUrl: DEFAULT_CONTENT.projects[1].liveUrl,
+        codeUrl: DEFAULT_CONTENT.projects[1].codeUrl
+      },
+      {
+        title: 'Up Is To Go',
+        description: 'موقع شخصي للتدريس وتطوير المواقع — دروس مباشرة عبر الإنترنت في اللغة الإنجليزية ومهارات الحاسوب يقدّمها الأستاذ حمزة (مدرسة السندباد، ومعهد كامبردج)، بالإضافة إلى مواقع ويب مخصصة للشركات الصغيرة.',
+        image: DEFAULT_CONTENT.projects[2].image,
+        liveUrl: DEFAULT_CONTENT.projects[2].liveUrl,
+        codeUrl: DEFAULT_CONTENT.projects[2].codeUrl
+      },
+      {
+        title: 'مشروعك القادم',
+        description: 'هذا ما نقدّمه — مواقع مخصصة وسريعة وموثوقة، مبنية من الصفر ووفق احتياجاتك، من معارض أعمال بسيطة إلى منصات متعددة الصفحات. تواصل معنا ولنبنِ موقعك القادم.',
+        image: DEFAULT_CONTENT.projects[3].image,
+        liveUrl: DEFAULT_CONTENT.projects[3].liveUrl,
+        codeUrl: DEFAULT_CONTENT.projects[3].codeUrl
+      }
+    ],
+
+    contact: {
+      intro: 'لديك مشروع في ذهنك أو تريد فقط إلقاء التحية؟ صندوق بريدي مفتوح دائمًا.',
+      email: DEFAULT_CONTENT.contact.email,
+      phone: DEFAULT_CONTENT.contact.phone,
+      socials: DEFAULT_CONTENT.contact.socials
+    }
+  };
+
+  // Static UI strings that live in HTML, not in the content objects above
+  // (nav links, section headings, footer, project-card link labels).
+  var STRINGS = {
+    en: {
+      navAbout: 'About', navServices: 'Services', navPortfolio: 'Portfolio', navContact: 'Contact',
+      secAboutTitle: 'About Me', secServicesTitle: 'What I Do', secPortfolioTitle: 'Portfolio', secContactTitle: 'Get In Touch',
+      footerRights: 'All rights reserved.',
+      visitSite: 'Visit Site ↗', code: 'Code ↗',
+      langToggle: 'العربية'
+    },
+    ar: {
+      navAbout: 'نبذة', navServices: 'خدماتي', navPortfolio: 'أعمالي', navContact: 'تواصل',
+      secAboutTitle: 'نبذة عني', secServicesTitle: 'ماذا أقدّم', secPortfolioTitle: 'أعمالي', secContactTitle: 'تواصل معي',
+      footerRights: 'جميع الحقوق محفوظة.',
+      visitSite: 'زيارة الموقع ↗', code: 'الكود ↗',
+      langToggle: 'English'
+    }
+  };
+
+  var LANG_KEY = 'dagenweb_lang';
+  var currentLang = localStorage.getItem(LANG_KEY) === 'ar' ? 'ar' : 'en';
+
+  function applyStaticStrings(lang) {
+    var s = STRINGS[lang];
+    document.getElementById('navAbout').textContent = s.navAbout;
+    document.getElementById('navServices').textContent = s.navServices;
+    document.getElementById('navPortfolio').textContent = s.navPortfolio;
+    document.getElementById('navContact').textContent = s.navContact;
+    document.getElementById('secAboutTitle').textContent = s.secAboutTitle;
+    document.getElementById('secServicesTitle').textContent = s.secServicesTitle;
+    document.getElementById('secPortfolioTitle').textContent = s.secPortfolioTitle;
+    document.getElementById('secContactTitle').textContent = s.secContactTitle;
+    document.getElementById('footerRights').textContent = s.footerRights;
+    document.getElementById('langToggle').textContent = s.langToggle;
+  }
+
+  // Exposed on the module scope (via closure) so renderPortfolio can read
+  // the current language's link labels without needing its own parameter.
+  function currentProjectLinkLabels() {
+    return { visitSite: STRINGS[currentLang].visitSite, code: STRINGS[currentLang].code };
+  }
+
+  function applyLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem(LANG_KEY, lang);
+    document.documentElement.lang = lang === 'ar' ? 'ar' : 'en';
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    applyStaticStrings(lang);
+    renderAll(lang === 'ar' ? CONTENT_AR : currentContent);
+  }
+
+  /* ========================================================================
+     3. CONTENT LOAD / SAVE (localStorage)
      ------------------------------------------------------------------------
      Because GitHub Pages is static hosting with no server/database, admin
      edits are saved to the browser's localStorage rather than a real
@@ -123,7 +244,7 @@
   var currentContent = loadContent();
 
   /* ========================================================================
-     3. RENDER FUNCTIONS
+     4. RENDER FUNCTIONS
      ------------------------------------------------------------------------
      Content is rendered via the DOM API (createElement/textContent) rather
      than innerHTML, so admin-entered text can never be interpreted as HTML.
@@ -212,10 +333,11 @@
       // Only render a link if it actually points somewhere (URL isn't '#').
       // Lets a project show just "Live Site" with no repo, just "Code" with
       // no live demo, or both — set the unused field to '#' to hide it.
+      var linkLabels = currentProjectLinkLabels();
       if (project.liveUrl && project.liveUrl !== '#') {
         var liveLink = document.createElement('a');
         liveLink.href = project.liveUrl;
-        liveLink.textContent = 'Visit Site ↗';
+        liveLink.textContent = linkLabels.visitSite;
         liveLink.target = '_blank';
         liveLink.rel = 'noopener noreferrer';
         links.appendChild(liveLink);
@@ -224,7 +346,7 @@
       if (project.codeUrl && project.codeUrl !== '#') {
         var codeLink = document.createElement('a');
         codeLink.href = project.codeUrl;
-        codeLink.textContent = 'Code ↗';
+        codeLink.textContent = linkLabels.code;
         codeLink.target = '_blank';
         codeLink.rel = 'noopener noreferrer';
         links.appendChild(codeLink);
@@ -273,11 +395,15 @@
     renderContact(content);
   }
 
-  renderAll(currentContent);
+  applyLanguage(currentLang);
   document.getElementById('year').textContent = new Date().getFullYear();
 
+  document.getElementById('langToggle').addEventListener('click', function () {
+    applyLanguage(currentLang === 'ar' ? 'en' : 'ar');
+  });
+
   /* ========================================================================
-     4. SCROLL FADE-IN ANIMATION
+     5. SCROLL FADE-IN ANIMATION
      ======================================================================== */
 
   var fadeEls = document.querySelectorAll('.fade-in');
@@ -298,7 +424,7 @@
   }
 
   /* ========================================================================
-     5. MOBILE NAV TOGGLE
+     6. MOBILE NAV TOGGLE
      ======================================================================== */
 
   var navToggle = document.getElementById('navToggle');
@@ -319,7 +445,7 @@
   });
 
   /* ========================================================================
-     6. ADMIN: AUTH + LOGIN MODAL
+     7. ADMIN: AUTH + LOGIN MODAL
      ------------------------------------------------------------------------
      IMPORTANT — read this before relying on it:
      This site has no server, so there is no way to do *real* authentication.
@@ -410,7 +536,7 @@
   window.addEventListener('hashchange', checkAdminHash);
 
   /* ========================================================================
-     7. ADMIN: DASHBOARD PANEL
+     8. ADMIN: DASHBOARD PANEL
      ------------------------------------------------------------------------
      The panel edits a working copy (`formState`) of the content. Nothing
      touches the live site or localStorage until "Save Changes" is clicked.
@@ -603,7 +729,7 @@
     readSimpleFieldsIntoFormState();
     currentContent = deepClone(formState);
     persistContent(currentContent);
-    renderAll(currentContent);
+    renderAll(currentLang === 'ar' ? CONTENT_AR : currentContent);
     saveStatus.textContent = 'Saved. Changes are live on this page (this browser only).';
   });
 
@@ -628,7 +754,7 @@
     }
     localStorage.removeItem(STORAGE_KEY);
     currentContent = deepClone(DEFAULT_CONTENT);
-    renderAll(currentContent);
+    renderAll(currentLang === 'ar' ? CONTENT_AR : currentContent);
     formState = deepClone(currentContent);
     populateAdminForm();
     saveStatus.textContent = 'Reset to defaults.';

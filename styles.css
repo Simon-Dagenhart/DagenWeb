@@ -210,6 +210,21 @@ input, textarea {
   color: var(--color-accent);
 }
 
+.lang-toggle {
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.lang-toggle:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
 .navbar__toggle {
   display: none;
   flex-direction: column;
@@ -762,6 +777,11 @@ input, textarea {
     border-top: 1px solid var(--color-border);
   }
 
+  .navbar__links .lang-toggle {
+    margin: 16px 24px;
+    align-self: flex-start;
+  }
+
   .section {
     padding: 80px 0;
   }
@@ -775,4 +795,46 @@ input, textarea {
   .modal__box {
     padding: 24px;
   }
+}
+
+/* ==========================================================================
+   Arabic / RTL
+   ------------------------------------------------------------------------
+   Toggled by setting dir="rtl" lang="ar" on <html> (see script.js). Flexbox
+   row layouts (.navbar__inner, .section__title, etc.) flip direction on
+   their own once dir="rtl" is set — only the few hardcoded left/right
+   positions below need manual mirroring. JetBrains Mono/Inter have no
+   Arabic glyphs, so Tajawal takes over for both headings and body text.
+   ========================================================================== */
+
+[dir="rtl"] body {
+  font-family: 'Tajawal', var(--font-body);
+}
+
+[dir="rtl"] .hero__name,
+[dir="rtl"] .hero__eyebrow,
+[dir="rtl"] .navbar__logo,
+[dir="rtl"] .section__title,
+[dir="rtl"] .btn,
+[dir="rtl"] .skill-tag,
+[dir="rtl"] .service-card__title,
+[dir="rtl"] .project-card__title,
+[dir="rtl"] .lang-toggle,
+[dir="rtl"] .navbar__links {
+  font-family: 'Tajawal', var(--font-heading);
+}
+
+[dir="rtl"] .admin-access {
+  right: auto;
+  left: 24px;
+}
+
+[dir="rtl"] .modal__close {
+  right: auto;
+  left: 18px;
+}
+
+[dir="rtl"] .admin-repeatable-item__remove {
+  right: auto;
+  left: 10px;
 }
