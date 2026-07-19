@@ -7,7 +7,12 @@
   </defs>
   <rect width="640" height="400" fill="url(#g2)"/>
   <rect x="0.5" y="0.5" width="639" height="399" fill="none" stroke="#26263a"/>
-  <text x="320" y="180" font-size="64" text-anchor="middle">🍁</text>
-  <text x="320" y="235" font-family="monospace" font-size="24" font-weight="700" fill="#00d9c0" text-anchor="middle">Maple Grove Elementary</text>
+  <g transform="translate(288,130) scale(2.6)">
+    <path d="M4,28 C8,24 3,20 10,17 C17,14 9,10 16,6 C19,3 22,5 27,2" fill="none" stroke="#8b5a2b" stroke-width="2.6" stroke-linecap="round"/>
+    <ellipse cx="11" cy="15.5" rx="3.4" ry="1.7" fill="#2fbf71" transform="rotate(-35 11 15.5)"/>
+    <ellipse cx="20.5" cy="6.5" rx="3.2" ry="1.6" fill="#2fbf71" transform="rotate(15 20.5 6.5)"/>
+    <ellipse cx="6" cy="24" rx="2.8" ry="1.4" fill="#2fbf71" transform="rotate(-55 6 24)"/>
+  </g>
+  <text x="320" y="235" font-family="monospace" font-size="24" font-weight="700" fill="#00d9c0" text-anchor="middle">Learn it twisted</text>
   <text x="320" y="262" font-family="monospace" font-size="14" fill="#5c5c70" text-anchor="middle">School Website</text>
 </svg>

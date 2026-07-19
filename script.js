@@ -55,9 +55,16 @@
         codeUrl: '#'
       },
       {
-        title: 'Maple Grove Elementary',
+        title: 'Learn it twisted',
         description: 'A full multi-page website for a K-5 school — home, about, academics, admissions, news, events, and student success stories, built to feel warm and welcoming for parents and prospective families.',
         image: 'assets/project-school.svg',
+        liveUrl: 'https://simon-dagenhart.github.io/Maple-school/',
+        codeUrl: '#'
+      },
+      {
+        title: 'Up Is To Go',
+        description: 'A personal teaching and web-development site — live online English and computer-skills lessons taught by Mr. Hamzah (Al-Sindbad School, Cambridge Institution), plus custom websites built for small businesses.',
+        image: 'assets/project-upistogo.svg',
         liveUrl: 'https://simon-dagenhart.github.io/Studies/',
         codeUrl: '#'
       },
