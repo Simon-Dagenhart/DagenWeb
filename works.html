@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DagenWeb — الأعمال</title>
+  <meta name="description" content="أعمال م. حمزة: مواقع، تطبيقات، وأدوات ويب.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="corner-nav">
+    <a href="index.html" class="corner-logo">DagenWeb</a>
+    <div class="corner-actions">
+      <button type="button" class="lang-toggle" id="langToggle">English</button>
+      <button type="button" class="menu-toggle" id="menuToggle">
+        <span data-ar="القائمة">Menu</span>
+        <span class="bars"><span></span><span></span><span></span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="menu-overlay" id="menuOverlay">
+    <div class="container">
+      <nav class="menu-links">
+        <a href="index.html" data-ar="الرئيسية">home</a>
+        <a href="works.html" class="active" data-ar="أعمالي">works</a>
+        <a href="about.html" data-ar="نبذة">about</a>
+        <a href="about.html#contact" data-ar="تواصل">contact</a>
+      </nav>
+      <div class="menu-contact">
+        <a href="mailto:simonkazage007@gmail.com">simonkazage007@gmail.com</a>
+        <a href="tel:+9647819767081">+964 781 9767 081</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <div class="works-header">
+      <h1 class="works-title" data-ar="أعمالي">works</h1>
+      <div class="view-toggle">
+        <button type="button" id="viewGrid" class="active" data-ar="شبكة">Grid</button>
+        <button type="button" id="viewList" data-ar="قائمة">List</button>
+      </div>
+    </div>
+
+    <div class="works-grid" id="worksGrid">
+
+      <a href="projects/toolshed.html" class="work-card">
+        <div class="browser-frame">
+          <div class="browser-frame__bar">
+            <span class="browser-frame__dot browser-frame__dot--red"></span>
+            <span class="browser-frame__dot browser-frame__dot--yellow"></span>
+            <span class="browser-frame__dot browser-frame__dot--green"></span>
+          </div>
+          <div class="browser-frame__image-wrap">
+            <img class="work-card__image" src="assets/projects/toolshed.png" alt="Toolshed">
+          </div>
+        </div>
+        <div class="work-card__caption">
+          <div class="title">Toolshed — ورشة الأدوات</div>
+          <div class="cat" data-ar="مشروع شخصي · أدوات ويب">Personal Project · Web Tools</div>
+        </div>
+      </a>
+
+      <a href="projects/up-is-to-go.html" class="work-card">
+        <div class="browser-frame">
+          <div class="browser-frame__bar">
+            <span class="browser-frame__dot browser-frame__dot--red"></span>
+            <span class="browser-frame__dot browser-frame__dot--yellow"></span>
+            <span class="browser-frame__dot browser-frame__dot--green"></span>
+          </div>
+          <div class="browser-frame__image-wrap">
+            <img class="work-card__image" src="assets/projects/up-is-to-go.png" alt="Up Is To Go">
+          </div>
+        </div>
+        <div class="work-card__caption">
+          <div class="title">Up Is To Go</div>
+          <div class="cat" data-ar="تصميم وتطوير مواقع · تعليم">Web Design &amp; Development · Education</div>
+        </div>
+      </a>
+
+      <a href="projects/learn-it-twisted.html" class="work-card">
+        <div class="browser-frame">
+          <div class="browser-frame__bar">
+            <span class="browser-frame__dot browser-frame__dot--red"></span>
+            <span class="browser-frame__dot browser-frame__dot--yellow"></span>
+            <span class="browser-frame__dot browser-frame__dot--green"></span>
+          </div>
+          <div class="browser-frame__image-wrap">
+            <img class="work-card__image" src="assets/projects/learn-it-twisted.png" alt="Learn it twisted">
+          </div>
+        </div>
+        <div class="work-card__caption">
+          <div class="title">Learn it twisted</div>
+          <div class="cat" data-ar="تصميم وتطوير مواقع · تعليم">Web Design &amp; Development · Education</div>
+        </div>
+      </a>
+
+      <a href="projects/gameroll.html" class="work-card">
+        <div class="browser-frame">
+          <div class="browser-frame__bar">
+            <span class="browser-frame__dot browser-frame__dot--red"></span>
+            <span class="browser-frame__dot browser-frame__dot--yellow"></span>
+            <span class="browser-frame__dot browser-frame__dot--green"></span>
+          </div>
+          <div class="browser-frame__image-wrap">
+            <img class="work-card__image" src="assets/projects/gameroll.png" alt="GameRoll">
+          </div>
+        </div>
+        <div class="work-card__caption">
+          <div class="title">GameRoll</div>
+          <div class="cat" data-ar="تطبيق ويب · مشروع شخصي">Web App · Personal Project</div>
+        </div>
+      </a>
+
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

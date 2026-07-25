@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toolshed — DagenWeb</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+  <header class="corner-nav">
+    <a href="../index.html" class="corner-logo">DagenWeb</a>
+    <div class="corner-actions">
+      <button type="button" class="lang-toggle" id="langToggle">English</button>
+      <button type="button" class="menu-toggle" id="menuToggle">
+        <span data-ar="القائمة">Menu</span>
+        <span class="bars"><span></span><span></span><span></span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="menu-overlay" id="menuOverlay">
+    <div class="container">
+      <nav class="menu-links">
+        <a href="../index.html" data-ar="الرئيسية">home</a>
+        <a href="../works.html" class="active" data-ar="أعمالي">works</a>
+        <a href="../about.html" data-ar="نبذة">about</a>
+        <a href="../about.html#contact" data-ar="تواصل">contact</a>
+      </nav>
+      <div class="menu-contact">
+        <a href="mailto:simonkazage007@gmail.com">simonkazage007@gmail.com</a>
+        <a href="tel:+9647819767081">+964 781 9767 081</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <div class="project-hero">
+      <div class="browser-frame">
+        <div class="browser-frame__bar">
+          <span class="browser-frame__dot browser-frame__dot--red"></span>
+          <span class="browser-frame__dot browser-frame__dot--yellow"></span>
+          <span class="browser-frame__dot browser-frame__dot--green"></span>
+        </div>
+        <div class="browser-frame__image-wrap">
+          <img src="../assets/projects/toolshed.png" alt="Toolshed">
+        </div>
+      </div>
+    </div>
+
+    <div class="project-meta">
+      <div class="project-meta__credit">
+        <p data-ar="مشروع شخصي.">Personal project.</p>
+      </div>
+      <div>
+        <h1 class="project-meta__title">Toolshed — ورشة الأدوات</h1>
+        <p class="project-meta__cat" data-ar="أدوات ويب · بالكامل من جهة العميل">Web Tools · Fully Client-Side</p>
+        <p class="project-meta__desc" data-ar="ورشة الأدوات موقع عربي بالكامل (RTL) يضم 11 أداة يومية مجانية — مولّد كلمات مرور، محوّل عملات، مولّد رمز QR، عجلة أسماء، ضاغط صور، وأكثر — كلها تعمل مباشرة داخل المتصفح دون خادم، ومعظمها بلا أي تتبع.">Toolshed is a fully Arabic (RTL) toolbox site with 11 free daily-use tools — a password generator, currency converter, QR generator, wheel of names, image compressor, and more — all running directly in the browser with no backend, most of it with zero tracking.</p>
+      </div>
+      <div class="project-meta__next">
+        <p class="label" data-ar="التالي: Up Is To Go">Next: Up Is To Go</p>
+        <p data-ar="تعليم">Education</p>
+      </div>
+    </div>
+
+    <div class="project-footnav">
+      <a href="gameroll.html">
+        <span class="dir" data-ar="السابق">Previous</span>
+        GameRoll
+      </a>
+      <a href="../works.html" data-ar="كل الأعمال">All Works</a>
+      <a href="up-is-to-go.html" style="text-align: end;">
+        <span class="dir" data-ar="التالي">Next</span>
+        Up Is To Go
+      </a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> DagenWeb</p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

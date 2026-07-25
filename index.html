@@ -1,219 +1,134 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DagenWeb — Developer Portfolio</title>
-  <meta name="description" content="DagenWeb — developer portfolio: projects, services, and contact info.">
+  <title>DagenWeb — مطوّر مواقع وتطبيقات، ومدرّس لغة إنجليزية</title>
+  <meta name="description" content="DagenWeb — معرض أعمال م. حمزة: تطوير المواقع والتطبيقات، وتدريس اللغة الإنجليزية ومهارات الحاسوب.">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 
-  <!-- Google Fonts: JetBrains Mono for headings, Inter for body text.
-       Tajawal covers the Arabic UI (JetBrains Mono/Inter have no Arabic
-       glyphs) — see the [dir="rtl"] font-family rules in styles.css.
-       All have solid system-font fallbacks defined in styles.css, so the
-       site still looks right if this request is blocked/offline. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- ======================= Navbar ======================= -->
-  <header class="navbar">
-    <div class="container navbar__inner">
-      <a href="#dagenweb" class="navbar__logo">Dagen<span class="accent">Web</span></a>
-
-      <button class="navbar__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
-        <span></span><span></span><span></span>
+  <header class="corner-nav corner-nav--light">
+    <a href="index.html" class="corner-logo">DagenWeb</a>
+    <div class="corner-actions">
+      <button type="button" class="lang-toggle" id="langToggle">English</button>
+      <button type="button" class="menu-toggle" id="menuToggle">
+        <span data-ar="القائمة">Menu</span>
+        <span class="bars"><span></span><span></span><span></span></span>
       </button>
-
-      <nav class="navbar__links" id="navLinks">
-        <a href="#about" id="navAbout">About</a>
-        <a href="#services" id="navServices">Services</a>
-        <a href="#portfolio" id="navPortfolio">Portfolio</a>
-        <a href="#contact" id="navContact">Contact</a>
-        <button type="button" class="lang-toggle" id="langToggle" aria-label="Switch language">العربية</button>
-      </nav>
     </div>
   </header>
 
+  <div class="menu-overlay" id="menuOverlay">
+    <div class="container">
+      <nav class="menu-links">
+        <a href="index.html" class="active" data-ar="الرئيسية">home</a>
+        <a href="works.html" data-ar="أعمالي">works</a>
+        <a href="about.html" data-ar="نبذة">about</a>
+        <a href="about.html#contact" data-ar="تواصل">contact</a>
+      </nav>
+      <div class="menu-contact">
+        <a href="mailto:simonkazage007@gmail.com">simonkazage007@gmail.com</a>
+        <a href="tel:+9647819767081">+964 781 9767 081</a>
+      </div>
+    </div>
+  </div>
+
   <main>
-    <!-- ======================= Hero ======================= -->
-    <section id="dagenweb" class="hero">
-      <div class="container hero__inner">
-        <p class="hero__eyebrow" id="heroEyebrow">Hi, my name is</p>
-        <h1 class="hero__name" id="heroName">Your Name</h1>
-        <p class="hero__tagline" id="heroTagline">Your tagline goes here.</p>
-        <a href="#portfolio" class="btn btn--primary" id="heroCta">View My Work</a>
+    <section class="home-hero">
+      <div class="home-hero__content">
+        <h1 class="home-hero__name" data-ar="م. حمزة">Eng Hamzah</h1>
+        <p class="home-hero__tagline" data-ar="أبني مواقع وتطبيقات Flutter للشركات الصغيرة (ولنفسي أيضًا)، وأدرّس اللغة الإنجليزية ومهارات الحاسوب اليومية حضوريًا في مدرسة السندباد ومعهد كامبردج.">I build websites and Flutter apps for small businesses (and myself), and teach English and everyday computer skills in person at Al-Sindbad School and Cambridge Institution.</p>
       </div>
+      <a href="#pricing" class="home-hero__scroll">
+        <span data-ar="الباقات والأسعار">Packages &amp; Pricing</span> ↓
+      </a>
     </section>
 
-    <!-- ======================= About ======================= -->
-    <section id="about" class="section fade-in">
-      <div class="container">
-        <h2 class="section__title">01. <span id="secAboutTitle">About Me</span></h2>
-        <div class="about__grid">
-          <p class="about__bio" id="aboutBio"></p>
-          <div class="about__skills" id="aboutSkills"></div>
+    <section class="pricing-section" id="pricing">
+      <div class="pricing-header">
+        <p class="pricing-eyebrow" data-ar="الباقات والأسعار">Packages &amp; Pricing</p>
+        <h2 class="pricing-title" data-ar="اختر الباقة المناسبة لمشروعك">Pick the right package for your project</h2>
+        <p class="pricing-sub" data-ar="اختر باقة جاهزة أو صف فكرتك الخاصة — الأسعار ابتدائية وتُحدَّد بدقة بعد معرفة تفاصيل مشروعك.">Pick a ready package or describe your own idea — prices are starting points, finalized once I know your project's details.</p>
+      </div>
+
+      <div class="pricing-list">
+        <div class="price-row">
+          <div class="price-row__left">
+            <span class="price-row__icon">🏬</span>
+            <div>
+              <div class="price-row__name" data-ar="متجر إلكتروني">Online Store</div>
+              <div class="price-row__desc" data-ar="كتالوج منتجات، سلة شراء، ونظام دفع للبيع أونلاين.">Product catalog, cart, and checkout for selling online.</div>
+            </div>
+          </div>
+          <div class="price-row__amount"><span class="from" data-ar="يبدأ من">From</span>$249</div>
         </div>
-      </div>
-    </section>
 
-    <!-- ======================= Services ======================= -->
-    <section id="services" class="section fade-in">
-      <div class="container">
-        <h2 class="section__title">02. <span id="secServicesTitle">What I Do</span></h2>
-        <div class="services__grid" id="servicesGrid"></div>
-      </div>
-    </section>
-
-    <!-- ======================= Portfolio ======================= -->
-    <section id="portfolio" class="section fade-in">
-      <div class="container">
-        <h2 class="section__title">03. <span id="secPortfolioTitle">Portfolio</span></h2>
-        <div class="portfolio__grid" id="portfolioGrid"></div>
-      </div>
-    </section>
-
-    <!-- ======================= Contact ======================= -->
-    <section id="contact" class="section fade-in">
-      <div class="container contact__inner">
-        <h2 class="section__title">04. <span id="secContactTitle">Get In Touch</span></h2>
-        <p id="contactIntro"></p>
-        <div class="contact__methods">
-          <a class="btn btn--primary" id="contactEmail" href="#"></a>
-          <a class="btn btn--ghost" id="contactPhone" href="#"></a>
+        <div class="price-row">
+          <div class="price-row__left">
+            <span class="price-row__icon">🖼️</span>
+            <div>
+              <div class="price-row__name" data-ar="معرض أعمال">Portfolio</div>
+              <div class="price-row__desc" data-ar="اعرض أعمالك عبر معارض صور ودراسات حالة.">Showcase your work with galleries and case studies.</div>
+            </div>
+          </div>
+          <div class="price-row__amount"><span class="from" data-ar="يبدأ من">From</span>$99</div>
         </div>
-        <div class="contact__socials" id="contactSocials"></div>
+
+        <div class="price-row">
+          <div class="price-row__left">
+            <span class="price-row__icon">💼</span>
+            <div>
+              <div class="price-row__name" data-ar="موقع أعمال">Business Site</div>
+              <div class="price-row__desc" data-ar="موقع احترافي متعدد الصفحات مع التواصل والخدمات.">Professional multi-page site with contact and services.</div>
+            </div>
+          </div>
+          <div class="price-row__amount"><span class="from" data-ar="يبدأ من">From</span>$149</div>
+        </div>
+
+        <div class="price-row">
+          <div class="price-row__left">
+            <span class="price-row__icon">📰</span>
+            <div>
+              <div class="price-row__name" data-ar="مدونة">Blog</div>
+              <div class="price-row__desc" data-ar="نشر مقالات مع تصنيفات وتعليقات.">Article publishing with categories and comments.</div>
+            </div>
+          </div>
+          <div class="price-row__amount"><span class="from" data-ar="يبدأ من">From</span>$79</div>
+        </div>
+
+        <div class="price-row">
+          <div class="price-row__left">
+            <span class="price-row__icon">📅</span>
+            <div>
+              <div class="price-row__name" data-ar="حجوزات ومواعيد">Booking / Appointments</div>
+              <div class="price-row__desc" data-ar="يتيح للعملاء حجز المواعيد والدفع أونلاين.">Let clients schedule and pay for appointments online.</div>
+            </div>
+          </div>
+          <div class="price-row__amount"><span class="from" data-ar="يبدأ من">From</span>$179</div>
+        </div>
+
+        <a href="about.html#contact" class="price-row price-row--custom">
+          <div class="price-row__left">
+            <span class="price-row__icon">✨</span>
+            <div>
+              <div class="price-row__name" data-ar="لديك فكرة أخرى؟">Have something else in mind?</div>
+              <div class="price-row__desc" data-ar="صف فكرتك وسنبنيها معًا.">Describe your own idea and we'll build it.</div>
+            </div>
+          </div>
+          <div class="price-row__amount">→</div>
+        </a>
       </div>
+
     </section>
   </main>
-
-  <!-- ======================= Footer ======================= -->
-  <footer class="footer">
-    <div class="container footer__inner">
-      <p>&copy; <span id="year"></span> DagenWeb. <span id="footerRights">All rights reserved.</span></p>
-      <!-- The only visible entry point to the admin login. Intentionally
-           small/low-contrast — see styles.css .admin-access -->
-      <button id="adminAccess" class="admin-access" aria-label="Admin login">&bull;</button>
-    </div>
-  </footer>
-
-  <!-- ======================= Admin: Login modal ======================= -->
-  <div class="modal" id="loginModal" hidden>
-    <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
-      <button class="modal__close" id="loginClose" aria-label="Close">&times;</button>
-      <h2 class="modal__title" id="loginTitle">Admin Login</h2>
-
-      <form id="loginForm">
-        <div class="form-field">
-          <label for="loginUsername">Username</label>
-          <input type="text" id="loginUsername" autocomplete="username" required>
-        </div>
-        <div class="form-field">
-          <label for="loginPassword">Password</label>
-          <input type="password" id="loginPassword" autocomplete="current-password" required>
-        </div>
-        <p class="form-error" id="loginError"></p>
-        <button type="submit" class="btn btn--primary">Log In</button>
-      </form>
-    </div>
-  </div>
-
-  <!-- ======================= Admin: Dashboard panel ======================= -->
-  <div class="modal modal--admin" id="adminPanel" hidden>
-    <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="adminTitle">
-      <button class="modal__close" id="adminClose" aria-label="Close">&times;</button>
-
-      <div class="admin-header">
-        <h2 class="modal__title" id="adminTitle" style="margin-bottom:0;">Admin Dashboard</h2>
-        <button class="btn btn--ghost btn--small" id="adminLogout">Log Out</button>
-      </div>
-      <p class="admin-subtitle">
-        Edits are saved to this browser only. Click "Export JSON" and copy the
-        result into <code>DEFAULT_CONTENT</code> in script.js to make changes
-        permanent for every visitor.
-      </p>
-
-      <form id="adminForm">
-        <!-- Hero -->
-        <div class="admin-section">
-          <h3 class="admin-section__title">Hero</h3>
-          <div class="form-field">
-            <label for="fHeroEyebrow">Eyebrow text</label>
-            <input type="text" id="fHeroEyebrow">
-          </div>
-          <div class="form-field">
-            <label for="fHeroName">Name</label>
-            <input type="text" id="fHeroName">
-          </div>
-          <div class="form-field">
-            <label for="fHeroTagline">Tagline</label>
-            <input type="text" id="fHeroTagline">
-          </div>
-          <div class="form-field">
-            <label for="fHeroCtaText">CTA button text</label>
-            <input type="text" id="fHeroCtaText">
-          </div>
-        </div>
-
-        <!-- About -->
-        <div class="admin-section">
-          <h3 class="admin-section__title">About</h3>
-          <div class="form-field">
-            <label for="fAboutBio">Bio</label>
-            <textarea id="fAboutBio"></textarea>
-          </div>
-          <div class="form-field">
-            <label for="fAboutSkills">Skills (comma-separated)</label>
-            <input type="text" id="fAboutSkills">
-          </div>
-        </div>
-
-        <!-- Services -->
-        <div class="admin-section">
-          <h3 class="admin-section__title">Services</h3>
-          <div id="fServicesList"></div>
-          <button type="button" class="btn btn--ghost btn--small" id="addService">+ Add Service</button>
-        </div>
-
-        <!-- Projects -->
-        <div class="admin-section">
-          <h3 class="admin-section__title">Portfolio Projects</h3>
-          <div id="fProjectsList"></div>
-          <button type="button" class="btn btn--ghost btn--small" id="addProject">+ Add Project</button>
-        </div>
-
-        <!-- Contact -->
-        <div class="admin-section">
-          <h3 class="admin-section__title">Contact</h3>
-          <div class="form-field">
-            <label for="fContactIntro">Intro text</label>
-            <input type="text" id="fContactIntro">
-          </div>
-          <div class="form-field">
-            <label for="fContactEmail">Email</label>
-            <input type="email" id="fContactEmail">
-          </div>
-          <div class="form-field">
-            <label for="fContactPhone">Phone</label>
-            <input type="tel" id="fContactPhone">
-          </div>
-          <div id="fSocialsList"></div>
-          <button type="button" class="btn btn--ghost btn--small" id="addSocial">+ Add Social Link</button>
-        </div>
-
-        <div class="admin-actions">
-          <button type="submit" class="btn btn--primary">Save Changes</button>
-          <button type="button" class="btn btn--ghost" id="exportJson">Export JSON</button>
-          <button type="button" class="btn btn--danger" id="resetContent">Reset to Defaults</button>
-        </div>
-        <p class="admin-save-status" id="saveStatus"></p>
-      </form>
-    </div>
-  </div>
 
   <script src="script.js"></script>
 </body>
