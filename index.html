@@ -9,7 +9,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -17,39 +17,115 @@
 
   <header class="corner-nav corner-nav--light">
     <a href="index.html" class="corner-logo">DagenWeb</a>
-    <div class="corner-actions">
-      <button type="button" class="lang-toggle" id="langToggle">English</button>
-      <button type="button" class="menu-toggle" id="menuToggle">
-        <span data-ar="القائمة">Menu</span>
-        <span class="bars"><span></span><span></span><span></span></span>
-      </button>
-    </div>
+    <nav class="corner-links">
+      <a href="index.html" class="active" data-ar="الرئيسية">home</a>
+      <a href="works.html" data-ar="أعمالي">works</a>
+      <a href="../Toolshed/index.html" data-ar="الأدوات">tools</a>
+      <a href="about.html" data-ar="نبذة">about</a>
+      <a href="about.html#contact" data-ar="تواصل">contact</a>
+    </nav>
+    <button type="button" class="lang-toggle" id="langToggle">English</button>
   </header>
-
-  <div class="menu-overlay" id="menuOverlay">
-    <div class="container">
-      <nav class="menu-links">
-        <a href="index.html" class="active" data-ar="الرئيسية">home</a>
-        <a href="works.html" data-ar="أعمالي">works</a>
-        <a href="about.html" data-ar="نبذة">about</a>
-        <a href="about.html#contact" data-ar="تواصل">contact</a>
-      </nav>
-      <div class="menu-contact">
-        <a href="mailto:simonkazage007@gmail.com">simonkazage007@gmail.com</a>
-        <a href="tel:+9647819767081">+964 781 9767 081</a>
-      </div>
-    </div>
-  </div>
 
   <main>
     <section class="home-hero">
       <div class="home-hero__content">
+        <div class="hero-badges">
+          <span class="hero-badge">🇮🇶 <span data-ar="من العراق">Iraq-based</span></span>
+          <span class="hero-badge">💻 <span data-ar="مطوّر ويب وتطبيقات">Web &amp; Mobile Dev</span></span>
+          <span class="hero-badge">🗣️ <span data-ar="مدرّس لغة إنجليزية">English Tutor</span></span>
+        </div>
         <h1 class="home-hero__name" data-ar="م. حمزة">Eng Hamzah</h1>
+        <p class="home-hero__statement" data-ar="أصمم، أبني، وأدرّس — لتنمو أعمالك ومهاراتك معًا.">I design, build, and teach — so your business and your skills both grow.</p>
         <p class="home-hero__tagline" data-ar="أبني مواقع وتطبيقات Flutter للشركات الصغيرة (ولنفسي أيضًا)، وأدرّس اللغة الإنجليزية ومهارات الحاسوب اليومية حضوريًا في مدرسة السندباد ومعهد كامبردج.">I build websites and Flutter apps for small businesses (and myself), and teach English and everyday computer skills in person at Al-Sindbad School and Cambridge Institution.</p>
       </div>
+
+      <div class="home-hero__mark" aria-hidden="true">
+        <svg class="hero-mark__ring" viewBox="0 0 200 200">
+          <defs>
+            <path id="heroMarkCircle" d="M100,100 m-84,0 a84,84 0 1,1 168,0 a84,84 0 1,1 -168,0" />
+          </defs>
+          <text>
+            <textPath href="#heroMarkCircle" data-ar="متاح للعمل الآن  ✦  متاح للعمل الآن  ✦  ">available for hire  ✦  available for hire  ✦  </textPath>
+          </text>
+        </svg>
+        <span class="hero-mark__center">✦</span>
+      </div>
+
       <a href="#pricing" class="home-hero__scroll">
         <span data-ar="الباقات والأسعار">Packages &amp; Pricing</span> ↓
       </a>
+    </section>
+
+    <div class="marquee">
+      <div class="marquee__track">
+        <div class="marquee__item">
+          <span data-ar="مطوّر ويب وتطبيقات">Web &amp; Mobile Developer</span>
+        </div>
+        <div class="marquee__item">
+          <span data-ar="مدرّس لغة إنجليزية">English Tutor</span>
+        </div>
+        <div class="marquee__item">
+          <span data-ar="ثنائي اللغة — عربي وإنجليزي">Bilingual — Arabic &amp; English</span>
+        </div>
+        <div class="marquee__item">
+          <span data-ar="من العراق">Based in Iraq</span>
+        </div>
+        <div class="marquee__item">
+          <span data-ar="مطوّر ويب وتطبيقات">Web &amp; Mobile Developer</span>
+        </div>
+        <div class="marquee__item">
+          <span data-ar="مدرّس لغة إنجليزية">English Tutor</span>
+        </div>
+        <div class="marquee__item">
+          <span data-ar="ثنائي اللغة — عربي وإنجليزي">Bilingual — Arabic &amp; English</span>
+        </div>
+        <div class="marquee__item">
+          <span data-ar="من العراق">Based in Iraq</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="latest-work">
+      <div class="latest-work__header">
+        <h2 class="latest-work__title" data-ar="أحدث الأعمال">Latest Work</h2>
+        <a href="works.html" class="latest-work__link" data-ar="كل الأعمال ←">See all work →</a>
+      </div>
+      <div class="latest-work__grid">
+        <a href="projects/toolshed.html" class="work-card">
+          <div class="browser-frame">
+            <div class="browser-frame__bar">
+              <span class="browser-frame__dot browser-frame__dot--red"></span>
+              <span class="browser-frame__dot browser-frame__dot--yellow"></span>
+              <span class="browser-frame__dot browser-frame__dot--green"></span>
+            </div>
+            <div class="browser-frame__image-wrap">
+              <img class="work-card__image" src="assets/projects/toolshed.png" alt="Toolshed">
+            </div>
+          </div>
+          <div class="work-card__caption">
+            <div class="title">Toolshed — ورشة الأدوات</div>
+            <div class="cat" data-ar="مشروع شخصي · أدوات ويب">Personal Project · Web Tools</div>
+          </div>
+        </a>
+
+        <a href="projects/up-is-to-go.html" class="work-card">
+          <div class="browser-frame">
+            <div class="browser-frame__bar">
+              <span class="browser-frame__dot browser-frame__dot--red"></span>
+              <span class="browser-frame__dot browser-frame__dot--yellow"></span>
+              <span class="browser-frame__dot browser-frame__dot--green"></span>
+            </div>
+            <div class="browser-frame__image-wrap">
+              <img class="work-card__image" src="assets/projects/up-is-to-go.png" alt="Up Is To Go">
+            </div>
+          </div>
+          <div class="work-card__caption">
+            <div class="title">Up Is To Go</div>
+            <div class="cat" data-ar="تصميم وتطوير مواقع · تعليم">Web Design &amp; Development · Education</div>
+          </div>
+        </a>
+      </div>
     </section>
 
     <section class="pricing-section" id="pricing">

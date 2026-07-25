@@ -1,50 +1,18 @@
 /* ==========================================================================
-   DagenWeb — script.js (rebuilt from scratch, 2026-07-25)
-   Shared behavior for every page: menu overlay, language toggle, footer
-   year, and (on works.html only) the grid/list view switch.
+   DagenWeb — script.js
+   Shared behavior for every page: language toggle, footer year, and (on
+   works.html only) the grid/list view switch. Nav links are plain <a>
+   tags directly in the header now — no menu overlay/popover to wire up.
 
-   No content-object/admin-panel system this time — content lives directly
-   in each page's HTML, translated via data-ar attributes (same convention
-   as english-teaching/assets/js/main.js elsewhere in this workspace).
-   Arabic is the default language; English is the secondary, toggled-to
-   option.
+   No content-object/admin-panel system — content lives directly in each
+   page's HTML, translated via data-ar attributes (same convention as
+   english-teaching/assets/js/main.js elsewhere in this workspace). Arabic
+   is the default language; English is the secondary, toggled-to option.
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', function () {
   var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-  // --- Menu: floating button + small rising panel (popover pattern) ----
-  var menuToggle = document.getElementById('menuToggle');
-  var menuOverlay = document.getElementById('menuOverlay');
-
-  function openMenu() {
-    menuOverlay.classList.add('open');
-    menuToggle.classList.add('open');
-  }
-  function closeMenu() {
-    menuOverlay.classList.remove('open');
-    menuToggle.classList.remove('open');
-  }
-  if (menuToggle && menuOverlay) {
-    menuToggle.addEventListener('click', function (e) {
-      e.stopPropagation();
-      if (menuOverlay.classList.contains('open')) closeMenu();
-      else openMenu();
-    });
-    menuOverlay.querySelectorAll('.menu-links a').forEach(function (link) {
-      link.addEventListener('click', closeMenu);
-    });
-    // Popover convention: clicking anywhere outside the panel/button closes it.
-    document.addEventListener('click', function (e) {
-      if (!menuOverlay.classList.contains('open')) return;
-      if (menuOverlay.contains(e.target) || menuToggle.contains(e.target)) return;
-      closeMenu();
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') closeMenu();
-    });
-  }
 
   // --- Language toggle (data-ar convention) ----------------------------
   var LANG_KEY = 'dagenweb-lang';
