@@ -1,13 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400">
   <defs>
-    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#15151f"/>
-      <stop offset="100%" stop-color="#241c33"/>
-    </linearGradient>
+    <radialGradient id="glowPurple" cx="18%" cy="8%" r="55%">
+      <stop offset="0%" stop-color="#b026ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#b026ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowCyan" cx="85%" cy="14%" r="50%">
+      <stop offset="0%" stop-color="#29f8ff" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#29f8ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowPink" cx="50%" cy="100%" r="55%">
+      <stop offset="0%" stop-color="#ff2e9a" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#ff2e9a" stop-opacity="0"/>
+    </radialGradient>
   </defs>
-  <rect width="640" height="400" fill="url(#g1)"/>
-  <rect x="0.5" y="0.5" width="639" height="399" fill="none" stroke="#26263a"/>
-  <text x="320" y="180" font-size="64" text-anchor="middle">🎲</text>
-  <text x="320" y="235" font-family="monospace" font-size="26" font-weight="700" fill="#00d9c0" text-anchor="middle">GameRoll</text>
-  <text x="320" y="262" font-family="monospace" font-size="14" fill="#5c5c70" text-anchor="middle">Random Game Generator</text>
+  <rect width="640" height="400" fill="#060613"/>
+  <rect width="640" height="400" fill="url(#glowPurple)"/>
+  <rect width="640" height="400" fill="url(#glowCyan)"/>
+  <rect width="640" height="400" fill="url(#glowPink)"/>
+  <rect x="0.5" y="0.5" width="639" height="399" fill="none" stroke="rgba(255,255,255,0.09)"/>
+  <text x="320" y="175" font-size="60" text-anchor="middle">🎮</text>
+  <text x="320" y="240" font-family="'Segoe UI', Arial, sans-serif" font-size="42" font-weight="800" text-anchor="middle">
+    <tspan fill="#b026ff">R</tspan><tspan fill="#ff2e9a">N</tspan><tspan fill="#ffe83f">G</tspan><tspan fill="#29f8ff">G</tspan>
+  </text>
+  <text x="320" y="270" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="600" letter-spacing="1" fill="#a89bc9" text-anchor="middle">RANDOM GAME GENERATOR</text>
 </svg>
