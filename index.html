@@ -9,7 +9,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Readex+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -20,9 +20,9 @@
     <nav class="corner-links">
       <a href="index.html" class="active" data-ar="الرئيسية">home</a>
       <a href="works.html" data-ar="أعمالي">works</a>
-      <a href="../Toolshed/index.html" data-ar="الأدوات">tools</a>
+      <a href="https://simon-dagenhart.github.io/Toolshed/" target="_blank" rel="noopener noreferrer" data-ar="الأدوات">tools</a>
       <a href="about.html" data-ar="نبذة">about</a>
-      <a href="about.html#contact" data-ar="تواصل">contact</a>
+      <a href="about.html#contact" class="is-primary" data-ar="تواصل">contact</a>
     </nav>
     <button type="button" class="lang-toggle" id="langToggle">English</button>
   </header>
@@ -39,6 +39,24 @@
         <p class="home-hero__statement" data-ar="أبني مواقع ويب وأدرّس الإنجليزية بالقرب من بغداد.">I build websites and teach English near Baghdad.</p>
         <p class="home-hero__tagline" data-ar="أبني مواقع وتطبيقات Flutter للشركات الصغيرة (ولنفسي أيضًا)، وأدرّس اللغة الإنجليزية ومهارات الحاسوب اليومية حضوريًا في مدرسة السندباد ومعهد كامبردج.">I build websites and Flutter apps for small businesses (and myself), and teach English and everyday computer skills in person at Al-Sindbad School and Cambridge Institution.</p>
       </div>
+
+      <!-- Hero bowtie — the entry point to the work, not decoration.
+           It is a real <a> so it keeps its place in the tab order and is
+           announced normally; the SVG is aria-hidden and the label is only
+           ever faded (never display:none), so assistive tech always reads
+           "Start here, link" regardless of the tied/untied visual state. -->
+      <a class="hero-bowtie" href="works.html">
+        <svg class="hero-bowtie__svg" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+          <g class="hero-bowtie__wing hero-bowtie__wing--start">
+            <polygon points="8,18 8,82 48,50" fill="var(--accent)"/>
+          </g>
+          <g class="hero-bowtie__wing hero-bowtie__wing--end">
+            <polygon points="92,18 92,82 52,50" fill="var(--accent)"/>
+          </g>
+          <rect class="hero-bowtie__knot" x="44" y="37" width="12" height="26" rx="4" fill="var(--accent-dark)"/>
+        </svg>
+        <span class="hero-bowtie__label" data-ar="ابدأ من هنا">Start here</span>
+      </a>
 
       <a href="#pricing" class="home-hero__scroll">
         <span data-ar="الباقات والأسعار">Packages &amp; Pricing</span> ↓
@@ -82,16 +100,16 @@
               <span class="browser-frame__dot browser-frame__dot--green"></span>
             </div>
             <div class="browser-frame__image-wrap">
-              <img class="work-card__image" src="assets/projects/up-is-to-go.png" alt="Up Is To Go">
+              <img class="work-card__image" src="assets/projects/up-is-to-go.png" alt="Seneta">
             </div>
           </div>
           <div class="work-card__caption">
-            <div class="title">Up Is To Go</div>
+            <div class="title">Seneta</div>
             <div class="cat" data-ar="تصميم وتطوير مواقع · تعليم">Web Design &amp; Development · Education</div>
           </div>
         </a>
 
-        <a href="projects/sindbad-schools.html" class="work-card">
+        <a href="projects/ashur.html" class="work-card">
           <div class="browser-frame">
             <div class="browser-frame__bar">
               <span class="browser-frame__dot browser-frame__dot--red"></span>
@@ -99,11 +117,11 @@
               <span class="browser-frame__dot browser-frame__dot--green"></span>
             </div>
             <div class="browser-frame__image-wrap">
-              <img class="work-card__image" src="assets/projects/sindbad-schools.png" alt="The Sindbad Schools">
+              <img class="work-card__image" src="assets/projects/ashur.png" alt="Ashur Private Schools">
             </div>
           </div>
           <div class="work-card__caption">
-            <div class="title">The Sindbad Schools</div>
+            <div class="title">Ashur Private Schools</div>
             <div class="cat" data-ar="تصميم وتطوير مواقع · تعليم">Web Design &amp; Development · Education</div>
           </div>
         </a>
@@ -116,12 +134,29 @@
               <span class="browser-frame__dot browser-frame__dot--green"></span>
             </div>
             <div class="browser-frame__image-wrap">
-              <img class="work-card__image" src="assets/projects/gameroll.png" alt="GameRoll">
+              <img class="work-card__image" src="assets/projects/gameroll.png" alt="RNGG">
             </div>
           </div>
           <div class="work-card__caption">
-            <div class="title">GameRoll</div>
+            <div class="title">RNGG</div>
             <div class="cat" data-ar="تطبيق ويب · مشروع شخصي">Web App · Personal Project</div>
+          </div>
+        </a>
+
+        <a href="projects/amoro.html" class="work-card">
+          <div class="browser-frame">
+            <div class="browser-frame__bar">
+              <span class="browser-frame__dot browser-frame__dot--red"></span>
+              <span class="browser-frame__dot browser-frame__dot--yellow"></span>
+              <span class="browser-frame__dot browser-frame__dot--green"></span>
+            </div>
+            <div class="browser-frame__image-wrap">
+              <img class="work-card__image" src="assets/projects/amoro.png" alt="Amoro">
+            </div>
+          </div>
+          <div class="work-card__caption">
+            <div class="title">Amoro</div>
+            <div class="cat" data-ar="تصميم وتطوير مواقع · سفر وسياحة">Web Design &amp; Development · Travel &amp; Tourism</div>
           </div>
         </a>
       </div>
@@ -143,7 +178,7 @@
               <div class="price-row__desc" data-ar="صفحات منتجات، وزر شراء عبر واتساب، ومحتوى بالعربية والإنجليزية. جاهز خلال 10 أيام، وسريع حتى مع إنترنت بطيء.">Product pages, WhatsApp checkout button, Arabic + English listings. Live in 10 days, fast on slow connections.</div>
             </div>
           </div>
-          <div class="price-row__amount"><span class="from" data-ar="يبدأ من">From</span>$249</div>
+          <div class="price-row__amount"><span class="from" data-ar="يبدأ من">From</span>$2,000</div>
         </div>
 
         <div class="price-row">
@@ -154,7 +189,7 @@
               <div class="price-row__desc" data-ar="صفحات معرض صور بالإضافة إلى صفحة قائمة مشاريع، بالعربية والإنجليزية. جاهز خلال أسبوع.">Gallery pages plus a one-page project list, both in Arabic and English. Ready within a week.</div>
             </div>
           </div>
-          <div class="price-row__amount"><span class="from" data-ar="يبدأ من">From</span>$99</div>
+          <div class="price-row__amount"><span class="from" data-ar="يبدأ من">From</span>$500</div>
         </div>
 
         <div class="price-row">
@@ -165,7 +200,7 @@
               <div class="price-row__desc" data-ar="صفحات بالعربية والإنجليزية، وزر واتساب، وخريطة غوغل مضمّنة. جاهز خلال أقل من أسبوعين.">Arabic and English pages, a WhatsApp button, a Google Maps embed. Ready in under 2 weeks.</div>
             </div>
           </div>
-          <div class="price-row__amount"><span class="from" data-ar="يبدأ من">From</span>$149</div>
+          <div class="price-row__amount"><span class="from" data-ar="يبدأ من">From</span>$1,200</div>
         </div>
 
         <div class="price-row">
@@ -176,7 +211,7 @@
               <div class="price-row__desc" data-ar="صفحات مقالات مع تصنيفات، بدعم العربية والإنجليزية، وتحميل سريع حتى مع إنترنت بطيء. جاهز خلال 6 أيام.">Article pages with categories, Arabic and English support, fast loading on slow connections. Ready in 6 days.</div>
             </div>
           </div>
-          <div class="price-row__amount"><span class="from" data-ar="يبدأ من">From</span>$79</div>
+          <div class="price-row__amount"><span class="from" data-ar="يبدأ من">From</span>$700</div>
         </div>
 
         <div class="price-row">
@@ -187,7 +222,7 @@
               <div class="price-row__desc" data-ar="حجز عبر تقويم، ورسائل تأكيد عبر واتساب، واستمارات بالعربية والإنجليزية. جاهز خلال أسبوعين.">Calendar booking, WhatsApp confirmation messages, Arabic + English forms. Live in 2 weeks.</div>
             </div>
           </div>
-          <div class="price-row__amount"><span class="from" data-ar="يبدأ من">From</span>$179</div>
+          <div class="price-row__amount"><span class="from" data-ar="يبدأ من">From</span>$1,500</div>
         </div>
 
         <a href="about.html#contact" class="price-row price-row--custom">
@@ -201,6 +236,8 @@
           <div class="price-row__amount" data-ar="←">→</div>
         </a>
       </div>
+
+      <p class="pricing-note" data-ar-html="<strong>الأسعار قابلة للتفاوض دائمًا.</strong> الأرقام أعلاه نقطة بداية لمشروع كامل الحجم، والسعر النهائي يتغيّر حسب حجم العمل المطلوب — عدد الصفحات، والمحتوى، والمزايا. المشاريع الصغيرة تُسعَّر بما يناسبها، ولا مانع أبدًا من تقسيم العمل على مراحل أو الاتفاق على ميزانية محدّدة. تحدّث معي أولًا ونصل إلى رقم مناسب للطرفين."><strong>Prices are always negotiable.</strong> The figures above are a starting point for a full-size project, and the final number moves with how much work is actually involved — number of pages, content, and features. Smaller businesses are quoted to fit, and splitting the work into stages or working to a set budget is always fine. Talk to me first and we'll land on a number that works for both of us.</p>
 
       <p class="pricing-footnote" data-ar="متاح لمشاريع جديدة الآن">Available for new projects right now.</p>
 

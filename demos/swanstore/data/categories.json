@@ -1,0 +1,22 @@
+[
+    {
+        "name": "فاينل وأقراص مضغوطة",
+        "icon": "vinyl"
+    },
+    {
+        "name": "ملابس",
+        "icon": "shirt"
+    },
+    {
+        "name": "إكسسوارات",
+        "icon": "pendant"
+    },
+    {
+        "name": "ملصقات",
+        "icon": "poster"
+    },
+    {
+        "name": "مستلزمات العزف",
+        "icon": "guitar"
+    }
+]

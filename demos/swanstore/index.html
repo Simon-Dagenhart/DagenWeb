@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>سوان ستور | swanstore — فاينل، ملابس، إكسسوارات ومستلزمات العزف</title>
+<meta name="description" content="سوان ستور — فاينل أصلي، تيشيرتات، إكسسوارات، ملصقات ومستلزمات عزف لعشّاق الموسيقى بجميع أنواعها. كل قطعة مختارة يدويًا وتُطلب مباشرة عبر واتساب بدون وسيط.">
+<meta name="theme-color" content="#08080a">
+<link rel="icon" href="assets/img/logo.svg">
+<meta property="og:type" content="website">
+<meta property="og:title" content="سوان ستور — اسمعها. البسها. عيشها.">
+<meta property="og:description" content="فاينل أصلي، ملابس، إكسسوارات ومستلزمات عزف — مختارة قطعة قطعة.">
+<meta property="og:image" content="assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- ==================== HEADER ==================== -->
+<header class="site-header" id="siteHeader">
+    <div class="header-inner">
+        <a href="#top" class="logo" aria-label="سوان ستور — الصفحة الرئيسية">
+            <img src="assets/img/logo.svg" alt="" class="logo-icon" width="42" height="42">
+            <span class="logo-text">
+                <span class="logo-ar">سوان ستور</span>
+                <span class="logo-en">swan store</span>
+            </span>
+        </a>
+
+        <nav class="main-nav" id="mainNav" aria-label="التنقل الرئيسي">
+            <ul>
+                <li><a href="#top" class="active">الرئيسية</a></li>
+                <li><a href="#categories">التصنيفات</a></li>
+                <li><a href="#shop">المتجر</a></li>
+                <li><a href="#about">من نحن</a></li>
+                <li><a href="#contact">تواصل</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-tools">
+            <button type="button" class="icon-btn" data-open-search aria-label="ابحث في المتجر" data-lucide="search"></button>
+            <span class="icon-btn is-accent" aria-label="إنستغرام" data-lucide="instagram"></span>
+            <button type="button" class="icon-btn nav-toggle" id="navToggle" aria-label="فتح القائمة" aria-expanded="false" aria-controls="mainNav" data-lucide="menu"></button>
+        </div>
+    </div>
+    <span class="scroll-progress" aria-hidden="true"></span>
+</header>
+<div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+
+<!-- ==================== SEARCH OVERLAY ==================== -->
+<div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="البحث في المتجر" aria-hidden="true">
+    <div class="search-panel">
+        <div class="search-field">
+            <span class="icon" data-lucide="search" aria-hidden="true"></span>
+            <input type="search" id="globalSearch" placeholder="ابحث عن فاينل، تيشيرت، ريشة..." aria-label="ابحث في المتجر" autocomplete="off">
+            <button type="button" class="search-close">ESC</button>
+        </div>
+        <div class="search-results" id="searchResults">
+            <div class="search-hint">
+                اكتب اسم منتج أو تصنيف — النتائج تظهر فورًا.<br>
+                <span style="opacity:.7">اختصار سريع: <kbd>Ctrl</kbd> + <kbd>K</kbd></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main>
+
+<!-- ==================== HERO ==================== -->
+<section class="hero" id="top">
+    <div class="hero-lights" aria-hidden="true"></div>
+    <div class="hero-strings" aria-hidden="true"></div>
+
+    <div class="container hero-grid">
+        <div class="hero-enter">
+            <div class="hero-badge-row">
+                <img src="assets/img/logo.svg" alt="" width="30" height="30">
+                <span>متجر عرض مستقل — <b>الطلب مباشر بدون وسيط</b></span>
+            </div>
+
+            <h1>
+                <span class="line"><span>اسمعها.</span></span>
+                <span class="line"><span><em>البسها.</em></span></span>
+                <span class="line"><span>عيشها<span class="dot">.</span></span></span>
+            </h1>
+
+            <p class="hero-tagline">سوان ستور — لعشّاق الموسيقى بكل ألوانها</p>
+
+            <p class="hero-lead">
+                فاينل أصلي، تيشيرتات مطبوعة لتدوم، إكسسوارات معدنية، ملصقات تستحق الإطار،
+                ومستلزمات عزف نستخدمها بأنفسنا. لا نعرض قطعة لم نقتنع بها.
+            </p>
+
+            <div class="hero-cta">
+                <a href="#shop" class="btn btn-primary">تصفّح المتجر</a>
+                <a href="#contact" class="btn btn-ghost">تواصل معنا</a>
+            </div>
+
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <b data-count="17" data-suffix="+">0</b>
+                    <span>قطعة معروضة</span>
+                </div>
+                <div class="hero-stat">
+                    <b data-count="5">0</b>
+                    <span>تصنيفات</span>
+                </div>
+                <div class="hero-stat">
+                    <b data-count="100" data-suffix="%">0</b>
+                    <span>قطع أصلية</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+            <div class="hero-disc">
+                <img src="assets/img/logo.svg" alt="" width="160" height="160">
+            </div>
+            <svg class="hero-tonearm" viewBox="0 0 200 120" fill="none">
+                <circle cx="176" cy="18" r="15" fill="#1b1b20" stroke="rgba(241,233,215,.18)"/>
+                <circle cx="176" cy="18" r="5" fill="#e11d2f"/>
+                <path d="M176 18 L92 78" stroke="rgba(241,233,215,.55)" stroke-width="5" stroke-linecap="round"/>
+                <path d="M96 74 L80 90" stroke="rgba(241,233,215,.75)" stroke-width="9" stroke-linecap="round"/>
+            </svg>
+        </div>
+    </div>
+
+    <div class="hero-scroll" aria-hidden="true">
+        <span>SCROLL</span>
+        <i></i>
+    </div>
+</section>
+
+<!-- ==================== TICKER ==================== -->
+<div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+        <span>فاينل أصلي</span><span>تيشيرتات مطبوعة</span><span>إكسسوارات معدنية</span><span>ملصقات A2</span><span>ريش وأوتار</span><span>طلب مباشر عبر واتساب</span><span>قطع مختارة يدويًا</span>
+        <span>فاينل أصلي</span><span>تيشيرتات مطبوعة</span><span>إكسسوارات معدنية</span><span>ملصقات A2</span><span>ريش وأوتار</span><span>طلب مباشر عبر واتساب</span><span>قطع مختارة يدويًا</span>
+    </div>
+</div>
+
+<!-- ==================== CATEGORIES ==================== -->
+<section class="section" id="categories">
+    <div class="container">
+        <div class="section-head reveal">
+            <div>
+                <p class="eyebrow">categories</p>
+                <h2 class="section-title">تصفّح <span class="thin">حسب التصنيف</span></h2>
+                <p class="section-sub">خمسة أقسام فقط، لكن كل قسم منتقى بعناية — اضغط أي تصنيف لترى قطعه في المتجر أدناه.</p>
+            </div>
+            <a href="#shop" class="btn btn-ghost btn-sm">كل المنتجات ←</a>
+        </div>
+
+        <div class="category-tiles" id="categoryTiles">
+            <div class="loading-state"><div class="spinner"></div><span>جارٍ تحميل التصنيفات...</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== FEATURED RAIL ==================== -->
+<section class="section section-band" id="featured">
+    <div class="container">
+        <div class="section-head reveal">
+            <div>
+                <p class="eyebrow">handpicked</p>
+                <h2 class="section-title">مختارات <span class="thin">هذا الشهر</span></h2>
+                <p class="section-sub">القطع التي نوصي بها أولًا — إما لأنها الأكثر طلبًا أو لأنها وصلت للتو.</p>
+            </div>
+            <div class="rail-nav">
+                <button type="button" id="railPrev" aria-label="السابق" data-lucide="arrowRight"></button>
+                <button type="button" id="railNext" aria-label="التالي" data-lucide="arrowLeft"></button>
+            </div>
+        </div>
+
+        <div class="rail-wrap">
+            <div class="rail" id="featuredRail">
+                <div class="loading-state"><div class="spinner"></div><span>جارٍ التحميل...</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SHOP ==================== -->
+<section class="section" id="shop">
+    <div class="container">
+        <div class="section-head reveal">
+            <div>
+                <p class="eyebrow">the shop</p>
+                <h2 class="section-title">المتجر</h2>
+                <p class="section-sub">متجر عرض: لا سلة ولا دفع إلكتروني. تختار القطعة، وتصلنا رسالتك، ونتفق على التفاصيل والتوصيل مباشرة.</p>
+            </div>
+            <button type="button" class="btn btn-ghost btn-sm" data-open-search>
+                <span class="icon" data-lucide="search" aria-hidden="true"></span> ابحث
+            </button>
+        </div>
+
+        <div class="shop-bar reveal">
+            <div class="filter-row" id="shopFilters"></div>
+            <span class="shop-count" id="shopCount"></span>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+            <div class="loading-state"><div class="spinner"></div><span>جارٍ تحميل المنتجات...</span></div>
+        </div>
+        <div class="did-you-mean" id="didYouMean" style="display:none;"></div>
+    </div>
+</section>
+
+<!-- ==================== PILLARS ==================== -->
+<section class="section section-band" id="why">
+    <div class="container">
+        <div class="section-head reveal">
+            <div>
+                <p class="eyebrow">why us</p>
+                <h2 class="section-title">لماذا <span class="thin">سوان ستور</span></h2>
+            </div>
+        </div>
+
+        <div class="pillars reveal">
+            <div class="pillar">
+                <span class="icon-wrap" data-lucide="shield" aria-hidden="true"></span>
+                <h3>قطع أصلية</h3>
+                <p>لا نسخ مقلّدة ولا طباعة رخيصة. ما لا نقتنع بجودته لا يدخل المتجر أصلًا.</p>
+            </div>
+            <div class="pillar">
+                <span class="icon-wrap" data-lucide="sparkles" aria-hidden="true"></span>
+                <h3>اختيار يدوي</h3>
+                <p>كل قطعة تمرّ علينا قبل أن تُعرض — نجرّبها، نسمعها، ونكتب وصفها بأنفسنا.</p>
+            </div>
+            <div class="pillar">
+                <span class="icon-wrap" data-lucide="truck" aria-hidden="true"></span>
+                <h3>توصيل داخل العراق</h3>
+                <p>نتفق على طريقة التوصيل والتكلفة قبل الطلب — لا رسوم تظهر لاحقًا.</p>
+            </div>
+            <div class="pillar">
+                <span class="icon-wrap" data-lucide="messageCircle" aria-hidden="true"></span>
+                <h3>تواصل مباشر</h3>
+                <p>تكلّم معنا نحن، لا مع روبوت. رسالة واتساب واحدة تكفي لإتمام الطلب.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== ABOUT ==================== -->
+<section class="section" id="about">
+    <div class="container about-grid">
+        <div class="reveal">
+            <p class="eyebrow">our story</p>
+            <h2 class="section-title" style="margin-bottom:22px;">من <span class="thin">نحن</span></h2>
+            <div class="story-block">
+                <p>وُلدت فكرة سوان ستور من شغفٍ حقيقي بالموسيقى بجميع أنواعها وألوانها، لا بالروك وحده — من الفاينل والملصقات إلى القطع التي تحمل هوية صاحبها لا مجرد موضة عابرة. لسنا متجرًا ضخمًا ولا شركة كبرى، بل فريق صغير يختار كل قطعة بعناية قبل أن تصل إليكم.</p>
+                <p>الفاينل عندنا يتمتع بجودة صوت حقيقية، والتيشيرتات مطبوعة بطباعة تتحمّل الغسيل المتكرر، والإكسسوارات مصنوعة من معادن تدوم طويلًا. وإذا لم نكن مقتنعين بقطعة ما، فلن تجدوها في المتجر أصلًا.</p>
+                <p>يتم الطلب حاليًا بشكل مباشر: تواصلوا معنا، نتفق على التفاصيل وطريقة التوصيل، وتصلكم القطعة دون أي وسيط أو رسوم خفية.</p>
+            </div>
+            <blockquote class="pull-quote">«ما نبيعه ليس منتجًا فحسب — بل قطعة تُذكّرك بأغنية.»</blockquote>
+        </div>
+
+        <div class="about-art reveal" aria-hidden="true">
+            <span class="ring"></span>
+            <span class="ring"></span>
+            <img src="assets/img/logo.svg" alt="" width="300" height="300">
+        </div>
+    </div>
+</section>
+
+<!-- ==================== CONTACT ==================== -->
+<section class="section section-band" id="contact">
+    <div class="container">
+        <div class="section-head reveal">
+            <div>
+                <p class="eyebrow">get in touch</p>
+                <h2 class="section-title">تواصل <span class="thin">معنا</span></h2>
+                <p class="section-sub">اختر الطريقة الأسهل لك — نرد بأسرع وقت خلال ساعات العمل.</p>
+            </div>
+        </div>
+
+        <div class="contact-grid reveal" id="contactGrid"></div>
+
+        <p class="order-note reveal" style="margin-top:22px;">
+            ملاحظة: جميع بيانات التواصل أعلاه مؤقتة (Placeholder) — تُستبدل بأرقام وحساب المتجر الفعليين قبل النشر.
+        </p>
+    </div>
+</section>
+
+</main>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="#top" class="logo">
+                    <img src="assets/img/logo.svg" alt="" class="logo-icon" width="42" height="42">
+                    <span class="logo-text">
+                        <span class="logo-ar">سوان ستور</span>
+                        <span class="logo-en">swan store</span>
+                    </span>
+                </a>
+                <p>متجر عرض مستقل لمستلزمات الموسيقى — فاينل، ملابس، إكسسوارات، ملصقات ومستلزمات عزف. الطلب مباشر، بلا وسيط.</p>
+                <div class="footer-social" id="footerSocial"></div>
+            </div>
+
+            <div class="footer-col">
+                <h4>categories</h4>
+                <ul id="footerCategories"></ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>site</h4>
+                <ul>
+                    <li><a href="#top">الرئيسية</a></li>
+                    <li><a href="#shop">المتجر</a></li>
+                    <li><a href="#why">لماذا سوان ستور</a></li>
+                    <li><a href="#about">من نحن</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>contact</h4>
+                <ul id="footerContact"></ul>
+            </div>
+        </div>
+
+        <div class="footer-mark" aria-hidden="true">SWAN STORE</div>
+
+        <div class="footer-bottom">
+            <p>&copy; <span id="year"></span> سوان ستور — جميع الحقوق محفوظة.</p>
+            <span class="footer-credit">
+                بُني بواسطة <a href="https://simon-dagenhart.github.io/DagenWeb/" target="_blank" rel="noopener noreferrer">DagenWeb ↗</a>
+            </span>
+        </div>
+    </div>
+</footer>
+
+<button type="button" class="to-top" id="toTop" aria-label="العودة إلى الأعلى" data-lucide="arrowUp"></button>
+
+<script src="assets/js/main.js"></script>
+<script>
+(function () {
+    var R = window.Swanstore;
+    var esc = R.escapeHTML;
+    var L = R.LUCIDE;
+    var C = R.CONTACT;
+
+    /* ---------- contact blocks (single source of truth: R.CONTACT) ---------- */
+    var contactGrid = document.getElementById('contactGrid');
+    if (contactGrid) {
+        contactGrid.innerHTML =
+            '<a class="contact-card" href="' + 'https://wa.me/' + C.whatsappNumber + '" target="_blank" rel="noopener noreferrer">' +
+                '<span class="icon-wrap">' + L.messageCircle + '</span>' +
+                '<b>واتساب</b><span>الأسرع للرد وإتمام الطلب.</span>' +
+                '<span class="value">' + esc(C.phoneDisplay) + '</span>' +
+            '</a>' +
+            '<a class="contact-card" href="tel:' + esc(C.phoneTel) + '">' +
+                '<span class="icon-wrap">' + L.phone + '</span>' +
+                '<b>اتصال مباشر</b><span>لو تفضّل الكلام بدل الكتابة.</span>' +
+                '<span class="value">' + esc(C.phoneDisplay) + '</span>' +
+            '</a>' +
+            // Instagram is shown but not linked — the icon and handle stay
+            // as contact info, without pointing anywhere.
+            '<div class="contact-card is-static">' +
+                '<span class="icon-wrap">' + L.instagram + '</span>' +
+                '<b>إنستغرام</b><span>الجديد أولًا بأول والقطع القادمة.</span>' +
+                '<span class="value">' + esc(C.instagramHandle) + '</span>' +
+            '</div>';
+    }
+
+    document.getElementById('footerSocial').innerHTML =
+        '<span class="icon-btn is-accent" aria-label="إنستغرام">' + L.instagram + '</span>' +
+        '<a class="icon-btn is-accent" href="https://wa.me/' + C.whatsappNumber + '" target="_blank" rel="noopener noreferrer" aria-label="واتساب">' + L.messageCircle + '</a>' +
+        '<a class="icon-btn is-accent" href="tel:' + esc(C.phoneTel) + '" aria-label="اتصال">' + L.phone + '</a>';
+
+    document.getElementById('footerContact').innerHTML =
+        '<li><a href="https://wa.me/' + C.whatsappNumber + '" target="_blank" rel="noopener noreferrer">واتساب: <bdi>' + esc(C.phoneDisplay) + '</bdi></a></li>' +
+        '<li><a href="tel:' + esc(C.phoneTel) + '">اتصال: <bdi>' + esc(C.phoneDisplay) + '</bdi></a></li>' +
+        '<li>' + esc(C.instagramHandle) + '</li>' +
+        '';
+
+    /* ---------- catalogue ---------- */
+    var tiles = document.getElementById('categoryTiles');
+    var grid = document.getElementById('productGrid');
+    var filters = document.getElementById('shopFilters');
+    var countEl = document.getElementById('shopCount');
+    var didYouMean = document.getElementById('didYouMean');
+    var rail = document.getElementById('featuredRail');
+
+    R.loadProducts().then(function (products) {
+        var categories = R.deriveCategories(products);
+        var activeCat = 'all';
+
+        /* --- category tiles --- */
+        tiles.innerHTML = categories.map(function (c, i) {
+            return (
+                '<a href="#shop" class="category-tile reveal" data-cat="' + esc(c.category) + '">' +
+                    '<span class="tile-index">0' + (i + 1) + '</span>' +
+                    '<span class="tile-art">' + R.icon(c.icon) + '</span>' +
+                    '<span class="tile-label">' + esc(c.category) + '</span>' +
+                    '<span class="tile-count">' + R.countLabel(c.count) + '</span>' +
+                    '<span class="tile-go">تصفّح <span class="arrow">←</span></span>' +
+                '</a>'
+            );
+        }).join('');
+
+        /* --- footer category links --- */
+        document.getElementById('footerCategories').innerHTML = categories.map(function (c) {
+            return '<li><a href="?cat=' + encodeURIComponent(c.category) + '#shop">' + esc(c.category) + '</a></li>';
+        }).join('');
+
+        /* --- filter chips --- */
+        filters.innerHTML =
+            '<button type="button" class="filter-btn active" data-filter="all">الكل <span class="count">' + products.length + '</span></button>' +
+            categories.map(function (c) {
+                return '<button type="button" class="filter-btn" data-filter="' + esc(c.category) + '">' +
+                    esc(c.category) + ' <span class="count">' + c.count + '</span></button>';
+            }).join('');
+
+        /* --- featured rail: tagged items first, then the newest in stock --- */
+        var featured = products.filter(function (p) { return p.tag && p.inStock !== false; });
+        products.forEach(function (p) {
+            if (featured.length < 8 && featured.indexOf(p) === -1 && p.inStock !== false) featured.push(p);
+        });
+        rail.innerHTML = featured.slice(0, 8).map(function (p) { return R.productCardHTML(p); }).join('');
+        R.observeReveal('.reveal:not(.in-view)');
+
+        /* --- rendering the shop grid --- */
+        function render(list, emptyMsg) {
+            R.renderGrid(grid, list, emptyMsg);
+            countEl.textContent = list.length ? R.countLabel(list.length) : '';
+        }
+
+        function showCategory(cat, scroll) {
+            activeCat = cat;
+            didYouMean.style.display = 'none';
+            grid.style.display = '';
+            filters.querySelectorAll('.filter-btn').forEach(function (b) {
+                b.classList.toggle('active', b.getAttribute('data-filter') === cat);
+            });
+            render(cat === 'all' ? products : products.filter(function (p) { return p.category === cat; }));
+            var url = cat === 'all'
+                ? window.location.pathname + '#shop'
+                : '?cat=' + encodeURIComponent(cat) + '#shop';
+            history.replaceState(null, '', url);
+            if (scroll) {
+                document.getElementById('shop').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        filters.addEventListener('click', function (e) {
+            var btn = e.target.closest('.filter-btn');
+            if (btn) showCategory(btn.getAttribute('data-filter'), false);
+        });
+
+        tiles.addEventListener('click', function (e) {
+            var tile = e.target.closest('[data-cat]');
+            if (!tile) return;
+            e.preventDefault();
+            showCategory(tile.getAttribute('data-cat'), true);
+        });
+
+        /* --- rail arrows (RTL: "next" scrolls visually leftwards) --- */
+        function railStep(dir) {
+            var card = rail.querySelector('.product-card');
+            var amount = (card ? card.offsetWidth + 20 : 280) * 2;
+            rail.scrollBy({ left: dir * amount, behavior: 'smooth' });
+        }
+        document.getElementById('railNext').addEventListener('click', function () { railStep(-1); });
+        document.getElementById('railPrev').addEventListener('click', function () { railStep(1); });
+
+        /* --- deep links: ?cat= from the footer / product page breadcrumb --- */
+        var params = new URLSearchParams(window.location.search);
+        var initialCat = params.get('cat');
+        var initialQuery = params.get('q');
+
+        if (initialQuery) {
+            var res = R.search(initialQuery, products);
+            if (res.matches.length) {
+                render(res.matches);
+            } else {
+                grid.innerHTML = '';
+                didYouMean.style.display = 'block';
+                didYouMean.innerHTML =
+                    '<p>لا توجد نتائج مطابقة لـ «' + esc(initialQuery) + '»' + (res.suggestions.length ? ' — هل تقصد:' : ' — جرّب كلمة أخرى.') + '</p>' +
+                    (res.suggestions.length ? '<div class="search-suggest-chips">' + R.suggestChipsHTML(res.suggestions) + '</div>' : '');
+                countEl.textContent = '';
+            }
+            setTimeout(function () {
+                document.getElementById('shop').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 200);
+        } else if (initialCat) {
+            showCategory(initialCat, true);
+        } else {
+            render(products);
+        }
+
+        didYouMean.addEventListener('click', function (e) {
+            var chip = e.target.closest('[data-suggest]');
+            if (!chip) return;
+            var r2 = R.search(chip.getAttribute('data-suggest'), products);
+            didYouMean.style.display = 'none';
+            render(r2.matches);
+        });
+    }).catch(function () {
+        var msg = '<div class="state-msg state-msg-error">' + L.alertTriangle +
+            ' تعذّر تحميل المنتجات حاليًا. تأكد من الاتصال ثم أعد تحميل الصفحة.</div>';
+        tiles.innerHTML = msg;
+        grid.innerHTML = msg;
+        rail.innerHTML = '';
+    });
+
+    /* ---------- nav link highlighting on scroll ---------- */
+    var sections = ['top', 'categories', 'shop', 'about', 'contact'];
+    var links = {};
+    document.querySelectorAll('.main-nav a').forEach(function (a) {
+        links[a.getAttribute('href').replace('#', '')] = a;
+    });
+    if ('IntersectionObserver' in window) {
+        var spy = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (!entry.isIntersecting) return;
+                Object.keys(links).forEach(function (k) { links[k].classList.remove('active'); });
+                if (links[entry.target.id]) links[entry.target.id].classList.add('active');
+            });
+        }, { rootMargin: '-45% 0px -50% 0px' });
+        sections.forEach(function (id) {
+            var el = document.getElementById(id);
+            if (el) spy.observe(el);
+        });
+    }
+})();
+</script>
+  <script src="../demo-bar.js"></script>
+</body>
+</html>

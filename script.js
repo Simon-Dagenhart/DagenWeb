@@ -45,6 +45,48 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // --- Hero bowtie: play the untie once on touch -----------------------
+  // On a pointer device the untie is driven by :hover. Touch has no hover,
+  // so CSS rests the bow open — correct, but phone visitors never see the
+  // one motion that carries the brand. Here we arm it (tie it) and let it
+  // untie itself as the hero settles. Once only, and the CTA is a real <a>
+  // throughout, so a tap navigates whatever state the bow is in.
+  //
+  // Every bail-out below leaves .is-armed off, which means CSS keeps the bow
+  // open and the CTA readable. Progressive enhancement, not a dependency.
+  var bowtie = document.querySelector('.hero-bowtie');
+  var touchish = window.matchMedia('(hover: none)').matches ||
+                 window.matchMedia('(max-width: 860px)').matches;
+  var stillness = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (bowtie && touchish && !stillness && 'IntersectionObserver' in window) {
+    bowtie.classList.add('is-armed');
+
+    var bowFallback;
+    function openBowtie(delay) {
+      clearTimeout(bowFallback);
+      if (bowObserver) bowObserver.disconnect();
+      // The delay lets the page-fade-in finish first — two motions at once
+      // reads as noise rather than as one gesture.
+      setTimeout(function () { bowtie.classList.add('is-open'); }, delay);
+    }
+
+    // A tied bow means the label is at opacity 0, so the CTA is invisible
+    // until this runs. On a short phone the bowtie can start below the fold,
+    // and a visitor who never scrolls would otherwise never see it at all.
+    // The timer guarantees it opens regardless; whichever fires first wins.
+    bowFallback = setTimeout(function () { openBowtie(0); }, 2400);
+
+    // 0.35 rather than a majority: on a tall hero the bowtie is often only
+    // partly on screen at rest, and waiting for 60% meant it sat tied.
+    var bowObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) openBowtie(260);
+      });
+    }, { threshold: 0.35 });
+    bowObserver.observe(bowtie);
+  }
+
   // --- Works grid: grid/list view toggle (works.html only) -------------
   // Briefly fades the grid out/in around the layout change instead of
   // snapping instantly, so switching views feels like a transition.

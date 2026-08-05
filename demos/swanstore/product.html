@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="pageTitle">منتج | سوان ستور</title>
+<meta name="description" content="تفاصيل المنتج وطريقة الطلب المباشر عبر واتساب في سوان ستور.">
+<meta name="theme-color" content="#08080a">
+<link rel="icon" href="assets/img/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- ==================== HEADER ==================== -->
+<header class="site-header" id="siteHeader">
+    <div class="header-inner">
+        <a href="index.html#top" class="logo" aria-label="سوان ستور — الصفحة الرئيسية">
+            <img src="assets/img/logo.svg" alt="" class="logo-icon" width="42" height="42">
+            <span class="logo-text">
+                <span class="logo-ar">سوان ستور</span>
+                <span class="logo-en">swan store</span>
+            </span>
+        </a>
+
+        <nav class="main-nav" id="mainNav" aria-label="التنقل الرئيسي">
+            <ul>
+                <li><a href="index.html#top">الرئيسية</a></li>
+                <li><a href="index.html#categories">التصنيفات</a></li>
+                <li><a href="index.html#shop" class="active">المتجر</a></li>
+                <li><a href="index.html#about">من نحن</a></li>
+                <li><a href="index.html#contact">تواصل</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-tools">
+            <button type="button" class="icon-btn" data-open-search aria-label="ابحث في المتجر" data-lucide="search"></button>
+            <span class="icon-btn is-accent" aria-label="إنستغرام" data-lucide="instagram"></span>
+            <button type="button" class="icon-btn nav-toggle" id="navToggle" aria-label="فتح القائمة" aria-expanded="false" aria-controls="mainNav" data-lucide="menu"></button>
+        </div>
+    </div>
+    <span class="scroll-progress" aria-hidden="true"></span>
+</header>
+<div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+
+<!-- ==================== SEARCH OVERLAY ==================== -->
+<div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="البحث في المتجر" aria-hidden="true">
+    <div class="search-panel">
+        <div class="search-field">
+            <span class="icon" data-lucide="search" aria-hidden="true"></span>
+            <input type="search" id="globalSearch" placeholder="ابحث عن فاينل، تيشيرت، ريشة..." aria-label="ابحث في المتجر" autocomplete="off">
+            <button type="button" class="search-close">ESC</button>
+        </div>
+        <div class="search-results" id="searchResults">
+            <div class="search-hint">
+                اكتب اسم منتج أو تصنيف — النتائج تظهر فورًا.<br>
+                <span style="opacity:.7">اختصار سريع: <kbd>Ctrl</kbd> + <kbd>K</kbd></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main>
+<div class="container product-page" id="productRoot">
+    <div class="loading-state"><div class="spinner"></div><span>جارٍ تحميل المنتج...</span></div>
+</div>
+
+<section class="section section-band" id="relatedSection" style="display:none;">
+    <div class="container">
+        <div class="section-head reveal">
+            <div>
+                <p class="eyebrow">you may also like</p>
+                <h2 class="section-title">قد يعجبك <span class="thin">أيضًا</span></h2>
+            </div>
+            <a href="index.html#shop" class="btn btn-ghost btn-sm">كل المنتجات ←</a>
+        </div>
+        <div class="product-grid" id="relatedGrid"></div>
+    </div>
+</section>
+</main>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html#top" class="logo">
+                    <img src="assets/img/logo.svg" alt="" class="logo-icon" width="42" height="42">
+                    <span class="logo-text">
+                        <span class="logo-ar">سوان ستور</span>
+                        <span class="logo-en">swan store</span>
+                    </span>
+                </a>
+                <p>متجر عرض مستقل لمستلزمات الموسيقى — فاينل، ملابس، إكسسوارات، ملصقات ومستلزمات عزف. الطلب مباشر، بلا وسيط.</p>
+                <div class="footer-social" id="footerSocial"></div>
+            </div>
+
+            <div class="footer-col">
+                <h4>categories</h4>
+                <ul id="footerCategories"></ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>site</h4>
+                <ul>
+                    <li><a href="index.html#top">الرئيسية</a></li>
+                    <li><a href="index.html#shop">المتجر</a></li>
+                    <li><a href="index.html#why">لماذا سوان ستور</a></li>
+                    <li><a href="index.html#about">من نحن</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>contact</h4>
+                <ul id="footerContact"></ul>
+            </div>
+        </div>
+
+        <div class="footer-mark" aria-hidden="true">SWAN STORE</div>
+
+        <div class="footer-bottom">
+            <p>&copy; <span id="year"></span> سوان ستور — جميع الحقوق محفوظة.</p>
+            <span class="footer-credit">
+                بُني بواسطة <a href="https://simon-dagenhart.github.io/DagenWeb/" target="_blank" rel="noopener noreferrer">DagenWeb ↗</a>
+            </span>
+        </div>
+    </div>
+</footer>
+
+<button type="button" class="to-top" id="toTop" aria-label="العودة إلى الأعلى" data-lucide="arrowUp"></button>
+
+<script src="assets/js/main.js"></script>
+<script>
+(function () {
+    var R = window.Swanstore;
+    var esc = R.escapeHTML;
+    var L = R.LUCIDE;
+    var C = R.CONTACT;
+
+    document.getElementById('footerSocial').innerHTML =
+        '<span class="icon-btn is-accent" aria-label="إنستغرام">' + L.instagram + '</span>' +
+        '<a class="icon-btn is-accent" href="https://wa.me/' + C.whatsappNumber + '" target="_blank" rel="noopener noreferrer" aria-label="واتساب">' + L.messageCircle + '</a>' +
+        '<a class="icon-btn is-accent" href="tel:' + esc(C.phoneTel) + '" aria-label="اتصال">' + L.phone + '</a>';
+
+    document.getElementById('footerContact').innerHTML =
+        '<li><a href="https://wa.me/' + C.whatsappNumber + '" target="_blank" rel="noopener noreferrer">واتساب: <bdi>' + esc(C.phoneDisplay) + '</bdi></a></li>' +
+        '<li><a href="tel:' + esc(C.phoneTel) + '">اتصال: <bdi>' + esc(C.phoneDisplay) + '</bdi></a></li>' +
+        '<li>' + esc(C.instagramHandle) + '</li>' +
+        '';
+
+    var root = document.getElementById('productRoot');
+
+    R.loadProducts().then(function (products) {
+        document.getElementById('footerCategories').innerHTML = R.deriveCategories(products).map(function (c) {
+            return '<li><a href="index.html?cat=' + encodeURIComponent(c.category) + '#shop">' + esc(c.category) + '</a></li>';
+        }).join('');
+
+        var id = new URLSearchParams(window.location.search).get('id');
+        var product = products.filter(function (p) { return p.id === id; })[0];
+
+        if (!product) {
+            root.innerHTML =
+                '<div class="empty-state">' +
+                    '<h2 class="section-title">المنتج غير موجود</h2>' +
+                    '<p>ربما تم حذفه أو أن الرابط غير صحيح.</p>' +
+                    '<a href="index.html#shop" class="btn btn-primary" style="margin-top:18px;">العودة إلى المتجر</a>' +
+                '</div>';
+            return;
+        }
+
+        document.getElementById('pageTitle').textContent = product.name + ' | سوان ستور';
+        var out = product.inStock === false;
+
+        /* ---------- order panel ---------- */
+        var orderPanel;
+        if (out) {
+            var waAsk = R.whatsappLink(product, 'مرحبًا، أرغب بمعرفة متى يتوفر: ' + product.name);
+            orderPanel =
+                '<div class="order-panel out-of-stock-panel">' +
+                    '<h4>غير متوفر حاليًا</h4>' +
+                    '<p class="order-note">نفدت هذه القطعة مؤقتًا من المخزون. تواصل معنا لنُعلمك فور توفرها من جديد.</p>' +
+                    '<a href="' + waAsk + '" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-block">' + L.messageCircle + ' اسأل عن موعد التوفر</a>' +
+                '</div>';
+        } else {
+            orderPanel =
+                '<div class="order-panel">' +
+                    '<h4>اطلب هذه القطعة</h4>' +
+                    '<a href="' + R.whatsappLink(product) + '" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block">' + L.messageCircle + ' اطلب عبر واتساب</a>' +
+                    '<a href="tel:' + esc(C.phoneTel) + '" class="btn btn-ghost btn-block">' + L.phone + ' اتصل الآن</a>' +
+                    // The Instagram CTA was dropped along with the Instagram
+                    // link — a button promising to open a chat that goes
+                    // nowhere is worse than not offering it. WhatsApp and
+                    // phone remain as the two working order routes.
+                    '<p class="order-note">اذكر اسم المنتج والمقاس (إن وجد) عند الطلب — سنؤكد التفاصيل والتوصيل معك مباشرة.</p>' +
+                '</div>';
+        }
+
+        root.innerHTML =
+            '<nav class="breadcrumb reveal" aria-label="مسار التصفح">' +
+                '<a href="index.html#top">الرئيسية</a><span class="sep">/</span>' +
+                '<a href="index.html#shop">المتجر</a><span class="sep">/</span>' +
+                '<a href="index.html?cat=' + encodeURIComponent(product.category) + '#shop">' + esc(product.category) + '</a>' +
+            '</nav>' +
+            '<div class="product-detail">' +
+                '<div class="thumb-large reveal' + (out ? ' out-of-stock' : '') + '">' +
+                    (out
+                        ? '<span class="stock-badge">غير متوفر حاليًا</span>'
+                        : (product.tag ? '<span class="product-tag">' + esc(product.tag) + '</span>' : '')) +
+                    R.productThumbHTML(product, { eager: true }) +
+                '</div>' +
+                '<div class="product-info reveal">' +
+                    '<div class="product-meta">' +
+                        '<span class="meta-chip">' + esc(product.category) + '</span>' +
+                        (out
+                            ? '<span class="meta-chip off">غير متوفر</span>'
+                            : '<span class="meta-chip ok">' + L.check + ' متوفر الآن</span>') +
+                        '<span class="meta-chip">طلب مباشر</span>' +
+                    '</div>' +
+                    '<h1>' + esc(product.name) + '</h1>' +
+                    '<div class="price-big">' + R.formatPrice(product.price) + '</div>' +
+                    '<p class="desc">' + esc(product.description) + '</p>' +
+                    orderPanel +
+                    '<div class="share-row">' +
+                        '<span>شارك القطعة:</span>' +
+                        '<button type="button" class="icon-btn" id="copyLink" aria-label="نسخ الرابط">' + L.link + '</button>' +
+                        '<a class="icon-btn" href="https://wa.me/?text=' + encodeURIComponent(product.name + ' — ' + window.location.href) + '" target="_blank" rel="noopener noreferrer" aria-label="مشاركة عبر واتساب">' + L.messageCircle + '</a>' +
+                    '</div>' +
+                '</div>' +
+            '</div>';
+
+        R.observeReveal('.reveal:not(.in-view)');
+
+        document.getElementById('copyLink').addEventListener('click', function () {
+            var url = window.location.href;
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(url).then(function () { R.toast('تم نسخ رابط المنتج'); });
+            } else {
+                R.toast(url);
+            }
+        });
+
+        /* ---------- related: same category first, then anything else ---------- */
+        var related = products.filter(function (p) { return p.id !== product.id && p.category === product.category; });
+        products.forEach(function (p) {
+            if (related.length < 4 && p.id !== product.id && related.indexOf(p) === -1) related.push(p);
+        });
+        related = related.slice(0, 4);
+        if (related.length) {
+            document.getElementById('relatedSection').style.display = '';
+            R.renderGrid(document.getElementById('relatedGrid'), related);
+        }
+    }).catch(function () {
+        root.innerHTML =
+            '<div class="state-msg state-msg-error">' + L.alertTriangle +
+            ' تعذّر تحميل المنتج حاليًا. تأكد من الاتصال ثم أعد تحميل الصفحة.</div>';
+    });
+})();
+</script>
+  <script src="../demo-bar.js"></script>
+</body>
+</html>

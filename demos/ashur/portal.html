@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Dashboard — Ashur Private Schools</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><path d=%22M16 2 L19 13 L30 16 L19 19 L16 30 L13 19 L2 16 L13 13 Z%22 fill=%22%237a1c3d%22/><path d=%22M16 6 L18 14 L26 16 L18 18 L16 26 L14 18 L6 16 L14 14 Z%22 fill=%22%23c9a227%22/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;500;600;700;800&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="site-header">
+    <div class="container header-inner">
+        <a href="index.html" class="logo"><svg class="brand-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 L19 13 L30 16 L19 19 L16 30 L13 19 L2 16 L13 13 Z" fill="#7a1c3d"/><path d="M16 6 L18 14 L26 16 L18 18 L16 26 L14 18 L6 16 L14 14 Z" fill="#c9a227"/></svg> <span class="logo-name">Ashur Private Schools</span></a>
+        <nav class="main-nav">
+            <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">English</button>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+            <ul id="navList">
+                <li><a href="index.html" data-ar="الرئيسية">Home</a></li>
+                <li><a href="portal.html" class="active" data-ar="لوحة الطالب">Dashboard</a></li>
+                <li><a href="login.html" id="logoutLink" data-ar="تسجيل الخروج">Sign Out</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+<section class="page-hero" style="padding:2.4rem 0;">
+    <div class="container">
+        <p class="portal-greet" data-ar="أهلاً بك،">Welcome,</p>
+        <h1 data-ar="سارة أحمد">Sara Ahmed</h1>
+        <p data-ar="رقم الطالب 20250001 · الصف السادس الابتدائي · شعبة (أ)">Student No. 20250001 · Grade 6 Primary · Section A</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="demo-note" style="margin-bottom:1.6rem;" data-ar="لوحة تجريبية ببيانات وهمية للعرض فقط.">Demo dashboard with sample data, for preview only.</div>
+
+        <div class="stats-row" style="margin-bottom:2.4rem;">
+            <div class="stat"><span class="stat-num">94%</span><span class="stat-label" data-ar="المعدل العام">Overall average</span></div>
+            <div class="stat"><span class="stat-num">98%</span><span class="stat-label" data-ar="نسبة الحضور">Attendance</span></div>
+            <div class="stat"><span class="stat-num">2</span><span class="stat-label" data-ar="واجبات معلّقة">Pending homework</span></div>
+            <div class="stat"><span class="stat-num">1</span><span class="stat-label" data-ar="رسائل جديدة">New messages</span></div>
+        </div>
+
+        <h2 class="section-title" data-ar="الدرجات">Grades</h2>
+        <div class="table-wrap" style="margin-bottom:2.4rem;">
+            <table>
+                <thead>
+                    <tr>
+                        <th data-ar="المادة">Subject</th>
+                        <th data-ar="الفصل الأول">Term 1</th>
+                        <th data-ar="الفصل الثاني">Term 2</th>
+                        <th data-ar="المعدل">Average</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td data-ar="اللغة العربية">Arabic</td><td>96</td><td>98</td><td>97</td></tr>
+                    <tr><td data-ar="اللغة الإنجليزية">English</td><td>92</td><td>95</td><td>93</td></tr>
+                    <tr><td data-ar="الرياضيات">Mathematics</td><td>90</td><td>94</td><td>92</td></tr>
+                    <tr><td data-ar="العلوم">Science</td><td>95</td><td>93</td><td>94</td></tr>
+                    <tr><td data-ar="الاجتماعيات">Social Studies</td><td>88</td><td>91</td><td>89</td></tr>
+                    <tr><td data-ar="التربية الإسلامية">Islamic Studies</td><td>97</td><td>99</td><td>98</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="grid grid-2">
+            <div>
+                <h2 class="section-title" style="text-align:right;" data-ar="جدول اليوم">Today's Schedule</h2>
+                <ul class="steps">
+                    <li class="step"><span class="step-num">1</span><div><h3 data-ar="اللغة العربية">Arabic</h3><p data-ar="٨:٠٠ – ٨:٤٥ · أ. منى">8:00 – 8:45 · Ms. Muna</p></div></li>
+                    <li class="step"><span class="step-num">2</span><div><h3 data-ar="الرياضيات">Mathematics</h3><p data-ar="٨:٤٥ – ٩:٣٠ · أ. حسن">8:45 – 9:30 · Mr. Hassan</p></div></li>
+                    <li class="step"><span class="step-num">3</span><div><h3 data-ar="العلوم">Science</h3><p data-ar="٩:٤٥ – ١٠:٣٠ · أ. رنا">9:45 – 10:30 · Ms. Rana</p></div></li>
+                    <li class="step"><span class="step-num">4</span><div><h3 data-ar="اللغة الإنجليزية">English</h3><p data-ar="١٠:٣٠ – ١١:١٥ · أ. علي">10:30 – 11:15 · Mr. Ali</p></div></li>
+                </ul>
+            </div>
+            <div>
+                <h2 class="section-title" style="text-align:right;" data-ar="إعلانات">Announcements</h2>
+                <div class="card" style="margin-bottom:1rem;">
+                    <span class="tag tag-blue" data-ar="تذكير">Reminder</span>
+                    <p style="margin:0.6rem 0 0;" data-ar="اختبار الرياضيات القصير يوم الأحد القادم — الوحدة الرابعة.">Math quiz next Sunday — Unit 4.</p>
+                </div>
+                <div class="card" style="margin-bottom:1rem;">
+                    <span class="tag tag-yellow" data-ar="نشاط">Activity</span>
+                    <p style="margin:0.6rem 0 0;" data-ar="رحلة علمية إلى المتحف يوم الخميس — أحضر إذن ولي الأمر.">Science trip to the museum on Thursday — bring your parent permission slip.</p>
+                </div>
+                <div class="card">
+                    <span class="tag tag-green" data-ar="واجب">Homework</span>
+                    <p style="margin:0.6rem 0 0;" data-ar="اللغة العربية: حفظ النشيد صفحة ٤٢ لموعد الثلاثاء.">Arabic: memorize the poem on page 42 by Tuesday.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-bottom" style="border:none;">
+        <p>&copy; <span id="year"></span> Ashur Private Schools. <span data-ar="جميع الحقوق محفوظة. (نموذج تصميم مُقترح.)">All rights reserved. (Proposed design concept.)</span></p>
+    </div>
+</footer>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/portal-guard.js"></script>
+  <script src="../demo-bar.js"></script>
+</body>
+</html>

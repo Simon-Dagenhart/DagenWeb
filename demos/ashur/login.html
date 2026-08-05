@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Portal — Ashur Private Schools</title>
+<meta name="description" content="Student portal login for Ashur Private Schools.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><path d=%22M16 2 L19 13 L30 16 L19 19 L16 30 L13 19 L2 16 L13 13 Z%22 fill=%22%237a1c3d%22/><path d=%22M16 6 L18 14 L26 16 L18 18 L16 26 L14 18 L6 16 L14 14 Z%22 fill=%22%23c9a227%22/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;500;600;700;800&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="site-header">
+    <div class="container header-inner">
+        <a href="index.html" class="logo"><svg class="brand-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 L19 13 L30 16 L19 19 L16 30 L13 19 L2 16 L13 13 Z" fill="#7a1c3d"/><path d="M16 6 L18 14 L26 16 L18 18 L16 26 L14 18 L6 16 L14 14 Z" fill="#c9a227"/></svg> <span class="logo-name">Ashur Private Schools</span></a>
+        <nav class="main-nav">
+            <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">English</button>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+            <ul id="navList">
+                <li><a href="index.html" data-ar="الرئيسية">Home</a></li>
+                <li><a href="about.html" data-ar="نبذة عنا">About</a></li>
+                <li><a href="academics.html" data-ar="المناهج">Academics</a></li>
+                <li><a href="admissions.html" data-ar="القبول">Admissions</a></li>
+                <li><a href="news.html" data-ar="الأخبار">News</a></li>
+                <li><a href="success.html" data-ar="قصص النجاح">Success Stories</a></li>
+                <li><a href="events.html" data-ar="الفعاليات">Events</a></li>
+                <li><a href="contact.html" data-ar="تواصل">Contact</a></li>
+                <li><a href="login.html" class="active" data-ar="قسم الطلاب">Student Portal</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+<section class="section">
+    <div class="container narrow">
+        <div class="login-wrap">
+            <div class="login-badge"></div>
+            <h1 class="login-title" data-ar="قسم الطلاب">Student Portal</h1>
+            <p class="login-sub" data-ar="سجّل الدخول برقم الطالب وكلمة السر لعرض الدرجات والجدول والحضور.">Sign in with your student number and password to view grades, schedule, and attendance.</p>
+
+            <div class="demo-note" data-ar="هذه بوابة تجريبية للعرض فقط. جرّب: رقم الطالب 20250001 وكلمة السر demo1234">This is a demo portal for preview only. Try: student number 20250001, password demo1234</div>
+
+            <form id="loginForm" class="login-form" autocomplete="off">
+                <label for="studentId" data-ar="رقم الطالب">Student number</label>
+                <input type="text" id="studentId" name="studentId" inputmode="numeric" required>
+
+                <label for="password" data-ar="كلمة السر">Password</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit" class="btn btn-blue" data-ar="تسجيل الدخول">Sign In</button>
+                <p class="login-error" id="loginError" hidden data-ar="رقم الطالب أو كلمة السر غير صحيحة. جرّب البيانات التجريبية أعلاه.">Incorrect student number or password. Try the demo credentials above.</p>
+            </form>
+        </div>
+    </div>
+</section>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-bottom" style="border:none;">
+        <p>&copy; <span id="year"></span> Ashur Private Schools. <span data-ar="جميع الحقوق محفوظة. (نموذج تصميم مُقترح.)">All rights reserved. (Proposed design concept.)</span></p>
+    </div>
+</footer>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/login.js"></script>
+  <script src="../demo-bar.js"></script>
+</body>
+</html>
