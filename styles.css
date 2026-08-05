@@ -425,15 +425,32 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   .hero-bowtie__svg { animation: none; }
 }
 
-/* Touch, with JS: play the untie once as the hero settles, so phone visitors
-   still get the moment instead of a static shape. .is-armed is added by JS
-   *only* after it has confirmed it can also open it — so with no JS, a failed
-   script, or no IntersectionObserver, the rules above still stand and the bow
-   rests open with its CTA readable. The animation is never load-bearing.
-   Both classes are on the same element, so specificity (0,2,0 / 0,3,0) beats
-   the plain .hero-bowtie rules above regardless of source order. */
-.hero-bowtie.is-armed { --untie: 0; }
-.hero-bowtie.is-armed.is-open { --untie: 1; }
+/* Touch, with JS: the bow is tied to scroll position instead of hover — it
+   starts tied and pulls open as you scroll down the hero. JS writes --untie
+   directly as an inline style, so this class only has to set the starting
+   point and get out of the way.
+
+   .is-scrolltied is added by JS *only* once it has committed to driving the
+   value, so with no JS or a failed script the rules above still stand and the
+   bow rests open with its CTA readable. The motion is never load-bearing.
+   Specificity (0,2,0) beats the plain .hero-bowtie rules regardless of order. */
+.hero-bowtie.is-scrolltied { --untie: 0; }
+
+/* No transition while scroll-driving: the scroll gesture supplies the motion,
+   and a transition on top of it lags the finger and reads as rubbery. */
+.hero-bowtie.is-scrolltied .hero-bowtie__wing,
+.hero-bowtie.is-scrolltied .hero-bowtie__knot {
+  transition: none;
+}
+
+/* The label is the CTA, so it stays put and stays visible — tying it to
+   scroll would leave an invisible call-to-action at the top of the page.
+   Only the bow itself responds to scrolling. */
+.hero-bowtie.is-scrolltied .hero-bowtie__label {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
 
 @media (prefers-reduced-motion: reduce) {
   .hero-bowtie__svg { animation: none; }
