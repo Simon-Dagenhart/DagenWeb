@@ -123,6 +123,36 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   gap: 20px;
   padding: 24px var(--gutter);
   color: var(--ink);
+  /* transparent at the top of the page so the bar floats over the hero band */
+  background: transparent;
+  border-block-end: 1px solid transparent;
+  transition: background-color var(--transition),
+              border-color var(--transition),
+              box-shadow var(--transition);
+}
+
+/* Scrolled: the bar was fully transparent at every scroll position, so page
+   content ran straight underneath it and collided with the logo and links —
+   two sets of text overlapping in the same pixels. Once you leave the top of
+   the page it takes a surface of its own and separates from the content.
+   Backdrop blur is a progressive nicety; the solid-ish background below it is
+   what actually does the work, so browsers without it still read correctly. */
+.corner-nav.is-stuck {
+  background: color-mix(in srgb, var(--bg) 94%, transparent);
+  border-block-end-color: var(--line);
+  box-shadow: 0 1px 16px rgba(36, 30, 33, 0.06);
+}
+
+@supports (backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px)) {
+  .corner-nav.is-stuck {
+    background: color-mix(in srgb, var(--bg) 92%, transparent);
+    -webkit-backdrop-filter: blur(14px) saturate(1.1);
+    backdrop-filter: blur(14px) saturate(1.1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .corner-nav { transition: none; }
 }
 
 /* Retained as a no-op so existing markup keeps working. It once lightened

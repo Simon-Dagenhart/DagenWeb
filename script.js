@@ -65,10 +65,18 @@ document.addEventListener('DOMContentLoaded', function () {
                  window.matchMedia('(max-width: 860px)').matches;
   var stillness = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  if (bowtie && touchish && !stillness) {
-    bowtie.classList.add('is-scrolltied');
+  var bowScrollDriven = !!bowtie && touchish && !stillness;
+  if (bowScrollDriven) bowtie.classList.add('is-scrolltied');
 
-    var bowTicking = false;
+  // --- Corner nav: take a surface once the page scrolls -----------------
+  // The bar is fixed and transparent, so at the top it floats over the hero
+  // band (intended) but further down page content ran underneath it and
+  // collided with the logo and links. Past the first few pixels it gets its
+  // own background — see .corner-nav.is-stuck.
+  var cornerNav = document.querySelector('.corner-nav');
+
+  if (cornerNav || bowScrollDriven) {
+    var scrollTicking = false;
 
     function bowProgress() {
       // Fully untied by the time you have scrolled a bit under half a screen,
@@ -80,22 +88,38 @@ document.addEventListener('DOMContentLoaded', function () {
       return p < 0 ? 0 : p > 1 ? 1 : p;
     }
 
-    function drawBowtie() {
-      bowTicking = false;
+    function drawBow() {
+      scrollTicking = false;
       bowtie.style.setProperty('--untie', bowProgress().toFixed(3));
     }
 
-    function onBowScroll() {
-      if (bowTicking) return;
-      bowTicking = true;
-      window.requestAnimationFrame(drawBowtie);
+    function syncNav() {
+      var y = window.pageYOffset || document.documentElement.scrollTop;
+      cornerNav.classList.toggle('is-stuck', y > 8);
     }
 
-    window.addEventListener('scroll', onBowScroll, { passive: true });
-    window.addEventListener('resize', onBowScroll, { passive: true });
+    function onScroll() {
+      // The nav is a single class toggle, so it runs straight away rather than
+      // waiting on a frame — if frames are starved (a busy page, a low-end
+      // phone) the bar must not sit transparent over the content while the
+      // queue drains. Only the bowtie, which writes a value every frame,
+      // is rAF-throttled.
+      if (cornerNav) syncNav();
+      if (!bowScrollDriven || scrollTicking) return;
+      scrollTicking = true;
+      window.requestAnimationFrame(drawBow);
+    }
+
+    function draw() {
+      if (cornerNav) syncNav();
+      if (bowScrollDriven) drawBow();
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
     // Set the correct state immediately — a reload partway down the page must
-    // not start from a tied bow and then jump on the first scroll event.
-    drawBowtie();
+    // not start transparent (or from a tied bow) and then jump on first scroll.
+    draw();
   }
 
   // --- Works grid: grid/list view toggle (works.html only) -------------
